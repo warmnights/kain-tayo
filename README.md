@@ -12,7 +12,7 @@ A responsive website for exploring Filipino food: top dishes, regional discoveri
 
 ## About
 
-Kain Tayo! ("Let's eat!") is a multi-page website made for BSIT Web Systems & Technologies (IT Elec 2-B). It helps visitors discover Filipino dishes, find where to eat, and learn about food from different regions.
+Kain Tayo! ("Let's eat!") is a multi-page website made for BSIT Web Systems and Technologies (IT Elec 2-B). It celebrates Filipino food and culture by helping visitors discover popular dishes and recipes, learn about regional specialties, find places to eat near them, and explore a map of the Philippines. This project is for educational purposes only and is not a commercial website.
 
 ## Features
 
