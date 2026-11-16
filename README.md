@@ -27,10 +27,10 @@ Kain Tayo! ("Let's eat!") is a multi-page website made for BSIT Web Systems & Te
 - Top Foods
 - Near Me
 - Regions
-- Foods
+- All Foods
 - Recipes
 - Map
-- Random
+- Random Food
 - Log In
 
 ## Built with
