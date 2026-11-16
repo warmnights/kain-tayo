@@ -1,0 +1,344 @@
+
+
+/*
+
+
+LEGAL INTRO
+
+
+*/
+
+
+.legal-intro {
+    padding: 3.5rem 4%;
+
+    text-align: center;
+
+    background-color: var(--color-background-secondary);
+}
+
+.legal-intro-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.legal-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+
+    margin-bottom: 2rem;
+
+    font-size: 0.8rem;
+    color: var(--color-primary);
+}
+
+.legal-breadcrumb a {
+    color: var(--color-primary);
+}
+
+.legal-breadcrumb span:last-child {
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+.legal-intro h1 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    line-height: 1.15;
+
+    color: var(--color-heading);
+}
+
+.legal-intro h1 span {
+    color: var(--color-accent);
+}
+
+.legal-intro-content > p {
+    max-width: 650px;
+
+    margin: 1.25rem auto 1.75rem;
+
+    font-size: 0.95rem;
+    line-height: 1.9;
+
+    color: var(--color-text);
+}
+
+.legal-updated {
+    display: inline-block;
+
+    padding: 0.55rem 1rem;
+
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    color: var(--color-primary);
+}
+
+
+/*
+
+
+LEGAL CONTENT
+
+
+*/
+
+
+/* First section after the intro: extra breathing room */
+.legal-section {
+    padding: 5rem 4%;
+
+    background-color: var(--color-background);
+}
+
+.legal-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    align-items: start;
+    gap: 4rem;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.legal-toc {
+    position: sticky;
+    top: 6.5rem;
+
+    padding: 1.5rem;
+
+    border-radius: 12px;
+
+    background-color: var(--color-background-secondary);
+}
+
+.legal-toc h2 {
+    margin: 0 0 1rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+
+    color: var(--color-heading);
+}
+
+.legal-toc ol {
+    margin: 0;
+    padding-left: 1.25rem;
+
+    list-style: decimal;
+}
+
+.legal-toc li {
+    margin-bottom: 0.6rem;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+
+    color: var(--color-primary);
+}
+
+.legal-toc a {
+    color: var(--color-text);
+}
+
+.legal-toc a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.legal-body {
+    max-width: 760px;
+}
+
+.legal-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    border-bottom: 1px solid rgba(100, 30, 22, 0.12);
+
+    /* Long words, like email addresses, wrap instead of overflowing on
+       very small screens */
+    overflow-wrap: break-word;
+
+    /* The table of contents links jump to these blocks. Without this the
+       sticky navbar covered the top of the heading. */
+    scroll-margin-top: 6.5rem;
+}
+
+.legal-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+.legal-block h2 {
+    margin: 0 0 1rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    line-height: 1.25;
+
+    color: var(--color-heading);
+}
+
+.legal-block p {
+    margin: 0 0 1rem;
+
+    font-size: 0.95rem;
+    line-height: 1.9;
+
+    color: var(--color-text);
+}
+
+.legal-block p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-block ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+
+    list-style: disc;
+}
+
+.legal-block li {
+    margin-bottom: 0.5rem;
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    color: var(--color-text);
+}
+
+.legal-block li::marker {
+    color: var(--color-primary);
+}
+
+.legal-block p a {
+    font-weight: 600;
+
+    color: var(--color-primary);
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-block p a:hover {
+    text-decoration-thickness: 2px;
+}
+
+
+/* ---------- Tablets (up to 1024px) ---------- */
+@media (max-width: 1024px) {
+
+    .legal-container {
+        grid-template-columns: 220px 1fr;
+        gap: 2.5rem;
+    }
+}
+
+
+/* ---------- Small tablets (up to 900px) ---------- */
+@media (max-width: 900px) {
+
+    /* Table of contents on top (no longer sticky), text below */
+    .legal-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .legal-toc {
+        position: static;
+    }
+
+    .legal-toc ol {
+        columns: 2;
+        column-gap: 2.5rem;
+    }
+
+    .legal-toc li {
+        break-inside: avoid;
+    }
+
+    .legal-body {
+        max-width: none;
+    }
+}
+
+
+/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+@media (max-width: 768px) {
+
+    /* Section spacing: the first section after the intro keeps a little
+       extra room (same as the other pages) */
+    .legal-intro {
+        padding: 2.75rem 4% 3rem;
+    }
+
+    .legal-section {
+        padding: 3.5rem 4%;
+    }
+
+    .legal-block {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .legal-block h2 {
+        font-size: clamp(1.4rem, 4.5vw, 1.8rem);
+    }
+}
+
+
+/* ---------- Phones (up to 640px) ---------- */
+@media (max-width: 640px) {
+
+    .legal-toc ol {
+        columns: 1;
+    }
+}
+
+
+/* ---------- Small phones (up to 480px) ---------- */
+@media (max-width: 480px) {
+
+    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+    .legal-intro,
+    .legal-section {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .legal-intro {
+        padding-top: 2.5rem;
+    }
+
+    .legal-breadcrumb {
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+    }
+
+    .legal-toc {
+        padding: 1.25rem;
+    }
+}
+
+
+/* ---------- Very small phones (up to 360px) ---------- */
+@media (max-width: 360px) {
+
+    .legal-intro h1 {
+        font-size: 2.25rem;
+    }
+}

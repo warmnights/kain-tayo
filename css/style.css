@@ -1,0 +1,1969 @@
+@font-face {
+    font-family: 'Fraunces';
+    src: url('../assets/fonts/Fraunces_72pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('../assets/fonts/Fraunces_72pt-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('../assets/fonts/Fraunces_72pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Poppins', sans-serif;
+
+    --color-background: #FFF3DF;
+    --color-background-secondary: #F7E7CF;
+
+    --color-text: #38251C;
+    --color-heading: #641E16;
+
+    --color-primary: #641E16;
+    --color-secondary: #E8AE3A;
+
+    --color-accent: #B85C38;
+
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input, button {
+    font-family: inherit;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+    line-height: 1.15;
+    margin: 0 0 .5rem;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+
+/*
+
+
+SKIP LINK
+
+
+*/
+
+
+.skip-link {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 2000;
+
+    padding: 0.75rem 1.25rem;
+
+    border-radius: 8px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+main {
+    scroll-margin-top: 5.5rem;
+}
+
+
+/* 
+
+
+KAIN TAYO NAVIGATION BAR 
+
+
+*/
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 88px;
+    padding: 1.25rem 4%;
+
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-background-secondary);
+}
+
+.navbar-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    flex-shrink: 0;
+
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.6rem;
+
+    color: var(--color-heading);
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.1rem, 1.5vw, 1.5rem);
+
+    margin-left: 4rem;
+    margin-right: auto;
+}
+
+.navbar-links a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.navbar-links a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.navbar-links a[aria-current="page"] {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.navbar-more {
+    position: relative;
+}
+
+.navbar-more > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    font-size: 0.9rem;
+    white-space: nowrap;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.navbar-more > summary::-webkit-details-marker {
+    display: none;
+}
+
+.navbar-more > summary::after {
+    width: 0.35rem;
+    height: 0.35rem;
+    margin-top: -0.2rem;
+
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+
+    content: "";
+    transform: rotate(45deg);
+    transition: transform 0.2s ease, margin 0.2s ease;
+}
+
+.navbar-more[open] > summary::after {
+    margin-top: 0.2rem;
+    transform: rotate(225deg);
+}
+
+.navbar-more > summary:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.navbar-more > summary:focus-visible,
+.navbar-links a:focus-visible,
+.navbar-login:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.navbar-more.is-current > summary {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.navbar-more-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    z-index: 11;
+
+    min-width: 11rem;
+    padding: 0.35rem;
+
+    background: var(--color-background);
+    border: 1px solid var(--color-background-secondary);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(56, 37, 28, 0.12);
+}
+
+.navbar-more-menu a {
+    display: block;
+    padding: 0.6rem 0.75rem;
+}
+
+.navbar-more-menu a:hover {
+    background-color: var(--color-background-secondary);
+    text-decoration: none;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.navbar-login {
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+    color: var(--color-text);
+
+    transition: color 0.2s ease;
+}
+
+.navbar-login:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+/*
+
+
+EXPLORE THE ISLANDS, TASTE THE CULTURE.
+
+
+*/
+
+
+.intro {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 600px;
+    padding: 7rem 1.5rem 8rem;
+
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(30, 12, 8, 0.6), rgba(30, 12, 8, 0.6)),
+        url("../assets/images/backgrounds/intro-background.jpg")
+        center / cover no-repeat;
+}
+
+.intro-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.intro h1 {
+    max-width: 18ch;
+    margin: 0 auto 1rem;
+
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.15;
+
+    color: var(--color-white);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+.intro-tagline {
+    margin: 0 0 2rem;
+
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.6;
+
+    color: var(--color-white);
+}
+
+.intro-search {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    width: min(850px, 100%);
+    margin: 0 auto;
+
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+
+    background-color: var(--color-white);
+    border-radius: 999px;
+}
+
+.intro-search svg {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.intro-search input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 0.75rem 0;
+
+    font-family: var(--font-body);
+    font-size: 1rem;
+
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.intro-search input::placeholder {
+    color: #80695B;
+    opacity: 1;
+}
+
+.intro-search input:focus-visible {
+    outline: none;
+}
+
+.intro-search:focus-within {
+    box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+.intro-search button {
+    padding: 0.85rem 1.75rem;
+
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    border: none;
+    border-radius: 999px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.intro-search button:hover {
+    background-color: var(--color-accent);
+}
+
+.search-suggestions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    margin-top: 1.5rem;
+}
+
+.search-suggestions-label {
+    margin-right: 0.25rem;
+
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.1rem;
+
+    color: var(--color-white);
+}
+
+.search-suggestions a {
+    padding: 0.55rem 1.1rem;
+
+    font-size: 0.9rem;
+
+    color: var(--color-white);
+
+    border: 1px solid var(--color-white);
+    border-radius: 999px;
+
+    transition: background-color 0.2s ease;
+}
+
+.search-suggestions a:hover {
+    background-color: rgba(255, 243, 223, 0.2);
+}
+
+
+/*
+
+
+LOCAL FLAVORS NEAR YOU
+
+
+*/
+
+
+.near-me {
+    padding: 5rem 4%;
+}
+
+.near-me-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.near-me-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.near-me-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-eyebrow {
+    display: block;
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--color-accent);
+}
+
+.near-me-header h2 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.near-me-header p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+.near-me-link {
+    padding: 0.8rem 1.4rem;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.near-me-link:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.restaurant-status {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    margin-bottom: 1.25rem;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    color: var(--color-primary);
+}
+
+.near-me-actions .restaurant-status {
+    margin-bottom: 0;
+}
+
+.restaurant-disclaimer {
+    max-width: 1000px;
+    margin: 0 0 1.5rem;
+
+    font-size: 0.85rem;
+    line-height: 1.7;
+
+    color: var(--color-text);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+}
+
+.restaurant-preview-notice {
+    max-width: 46rem;
+    padding: 1.5rem;
+    background-color: var(--color-background-secondary);
+
+    border: 1px solid rgba(56, 37, 28, 0.08);
+    border-radius: 12px;
+}
+
+.restaurant-preview-notice h3 {
+    margin: 0 0 0.5rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.restaurant-preview-notice p {
+    max-width: 65ch;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+/*
+
+
+FRESH FINDS
+
+
+*/
+
+
+.fresh-finds {
+    padding: 3.5rem 4%;
+}
+
+.fresh-finds-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.fresh-finds-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+}
+
+.fresh-finds-header .section-eyebrow {
+    display: block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--color-accent);
+}
+
+.fresh-finds-header h2 {
+    margin: 0 0 0.75rem;
+
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.fresh-finds-header p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+.fresh-finds-link {
+    padding: 0.8rem 1.4rem;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.fresh-finds-link:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.fresh-finds-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.fresh-find-card {
+    overflow: hidden;
+
+    background-color: var(--color-background-secondary);
+    border: 1px solid rgba(56, 37, 28, 0.08);
+    border-radius: 12px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fresh-find-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 24px rgba(56, 37, 28, 0.12);
+}
+
+.fresh-find-card > img {
+    display: block;
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.fresh-find-info {
+    padding: 1.5rem;
+}
+
+.fresh-find-category {
+    display: inline-block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    color: var(--color-primary);
+}
+
+.fresh-find-info h3 {
+    margin: 0 0 0.5rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.fresh-find-location {
+    margin: 0 0 1rem;
+
+    font-size: 0.85rem;
+
+    color: var(--color-primary);
+}
+
+.fresh-find-description {
+    min-height: 4.5rem;
+
+    margin: 0 0 1.25rem;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+.fresh-find-info a {
+    display: inline-block;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.fresh-find-info a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+
+/*
+
+
+DID YOU KNOW
+
+
+*/
+
+
+.trivia {
+    padding: 3.5rem 4%;
+}
+
+.trivia-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.trivia-header {
+    margin-bottom: 2rem;
+}
+
+.trivia-header .section-eyebrow {
+    display: block;
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--color-accent);
+}
+
+.trivia-header h2 {
+    margin: 0 0 0.75rem;
+
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.trivia-header p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+.trivia-card {
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    overflow: hidden;
+
+    background-color: var(--color-background-secondary);
+    border: 1px solid rgba(56, 37, 28, 0.08);
+    border-radius: 16px;
+}
+
+.trivia-image {
+    min-height: 350px;
+}
+
+.trivia-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.trivia-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 3rem;
+}
+
+.trivia-category {
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    color: var(--color-primary);
+}
+
+.trivia-info h3 {
+    margin: 0 0 1rem;
+
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: var(--color-heading);
+}
+
+.trivia-info p {
+    max-width: 600px;
+    margin: 0 0 1.5rem;
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    color: var(--color-text);
+}
+
+.trivia-highlight {
+    display: inline-block;
+    width: fit-content;
+
+    padding: 0.5rem 1rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+    background-color: rgba(232, 174, 58, 0.2);
+
+    border-radius: 20px;
+}
+
+
+/*
+
+
+FROM AROUND THE PHILIPPINES
+
+
+*/
+
+
+.regional-discoveries {
+    padding: 3.5rem 4%;
+}
+
+.regional-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.regional-header {
+    margin-bottom: 2rem;
+}
+
+.regional-header .section-eyebrow {
+    display: block;
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--color-accent);
+}
+
+.regional-header h2 {
+    margin: 0 0 0.75rem;
+
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.regional-header p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+.regional-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.regional-card {
+    overflow: hidden;
+
+    background-color: var(--color-background-secondary);
+    border: 1px solid rgba(56, 37, 28, 0.08);
+    border-radius: 12px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.regional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(56, 37, 28, 0.12);
+}
+
+.regional-card > img {
+    display: block;
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+}
+
+.regional-info {
+    padding: 1.5rem;
+}
+
+.regional-label {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+
+    color: var(--color-primary);
+}
+
+.regional-info h3 {
+    margin: 0 0 0.75rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.regional-info p {
+    min-height: 4.5rem;
+    margin: 0 0 1.25rem;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+
+    color: var(--color-text);
+}
+
+.regional-info a {
+    display: inline-block;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.regional-info a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+
+/*
+
+
+POPULAR RIGHT NOW
+
+
+*/
+
+
+.popular-foods {
+    padding: 3.5rem 4%;
+}
+
+.popular-foods-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.popular-foods-header {
+    margin-bottom: 2rem;
+}
+
+.popular-foods-header .section-eyebrow {
+    display: block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--color-accent);
+}
+
+.popular-foods-header h2 {
+    margin: 0 0 0.75rem;
+
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.popular-foods-header p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+.popular-foods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.popular-food-card {
+    overflow: hidden;
+
+    background-color: var(--color-background-secondary);
+    border: 1px solid rgba(56, 37, 28, 0.08);
+    border-radius: 12px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popular-food-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 24px rgba(56, 37, 28, 0.12);
+}
+
+.popular-food-card > img {
+    display: block;
+
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+}
+
+.popular-food-info {
+    padding: 1.5rem;
+}
+
+.popular-food-category {
+    display: inline-block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    color: var(--color-primary);
+}
+
+.popular-food-info h3 {
+    margin: 0 0 0.75rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    color: var(--color-heading);
+}
+
+.popular-food-info p {
+    min-height: 4.5rem;
+
+    margin: 0 0 1.25rem;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+.popular-food-info a {
+    display: inline-block;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.popular-food-info a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.popular-foods-footer {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 2rem;
+}
+
+.popular-foods-footer a {
+    padding: 0.8rem 1.4rem;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+}
+
+.popular-foods-footer a:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+
+/*
+
+
+WHAT SHOULD WE EAT NEXT
+
+
+*/
+
+
+.random-food {
+    padding: 3.5rem 4%;
+}
+
+.random-food-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding: 4.5rem 2rem;
+
+    text-align: center;
+
+    background-color: var(--color-primary);
+    border-radius: 16px;
+}
+
+.random-food-container h2 {
+    margin: 0 0 1rem;
+
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+
+    color: var(--color-background);
+}
+
+.random-food-container p {
+    margin: 0 0 2rem;
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: var(--color-background-secondary);
+}
+
+.random-food-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.9rem 1.8rem;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+
+    border-radius: 8px;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.random-food-button:hover {
+    background-color: var(--color-background);
+    transform: translateY(-2px);
+}
+
+
+/*
+
+
+KAIN TAYO FOOTER
+
+
+*/
+
+
+.footer {
+    padding: 4rem 4% 1.5rem;
+
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+    gap: 3rem;
+
+    padding-bottom: 3rem;
+}
+
+.footer-logo {
+    display: inline-block;
+
+    margin-bottom: 1rem;
+
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: var(--color-background);
+}
+
+.footer-brand > p {
+    max-width: 350px;
+
+    margin: 0 0 1.25rem;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+
+    color: var(--color-background-secondary);
+}
+
+.footer-brand-tagline {
+    display: inline-block;
+
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-style: italic;
+
+    color: var(--color-secondary);
+}
+
+.footer-links h3,
+.footer-about h3 {
+    margin: 0 0 1.25rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    color: var(--color-background);
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+
+    color: var(--color-background-secondary);
+
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary);
+}
+
+
+.footer-about p {
+    margin: 0 0 1.25rem;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+
+    color: var(--color-background-secondary);
+}
+
+.footer-explore-link {
+    display: inline-block;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: var(--color-secondary);
+
+    transition: color 0.2s ease;
+}
+
+.footer-explore-link:hover {
+    color: var(--color-background);
+}
+
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid rgba(255, 243, 223, 0.2);
+}
+
+.footer-bottom p,
+.footer-bottom span {
+    margin: 0;
+
+    font-size: 0.8rem;
+
+    color: var(--color-background-secondary);
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+}
+
+.footer-legal a {
+    font-size: 0.8rem;
+
+    color: var(--color-background-secondary);
+
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--color-secondary);
+}
+
+/* ---------- Hamburger button: hidden on desktop ---------- */
+.navbar-toggle {
+    display: none;
+}
+
+
+/* ---------- Small desktops / large tablets (up to 1180px) ---------- */
+@media (max-width: 1180px) {
+
+    /* Navbar: tighten spacing so 7 links + actions still fit on one row */
+    .navbar-links {
+        margin-left: 2rem;
+        gap: 1rem;
+    }
+}
+
+
+/* ---------- Tablets landscape and smaller (up to 1080px) ----------
+   Navbar switches to a hamburger menu. The links and buttons are hidden
+   until the menu button is pressed (nav.js adds/removes .is-open). */
+@media (max-width: 1080px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        min-height: 0;
+        padding: 0.75rem 4%;
+    }
+
+    /* If the open menu is taller than the screen, let it scroll */
+    .navbar.is-open {
+        max-height: 100vh;
+        max-height: 100dvh;
+        overflow-y: auto;
+    }
+
+    .navbar-logo {
+        order: 1;
+    }
+
+    /* The hamburger button */
+    .navbar-toggle {
+        order: 2;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 0;
+
+        color: var(--color-primary);
+        background: transparent;
+
+        border: 1px solid var(--color-primary);
+        border-radius: 8px;
+
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .navbar-toggle:hover {
+        background-color: var(--color-background-secondary);
+    }
+
+    .navbar-toggle:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+    }
+
+    .navbar-toggle svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+    }
+
+    /* Show the three-line icon by default, the X icon when open */
+    .navbar-toggle .icon-close {
+        display: none;
+    }
+
+    .navbar.is-open .navbar-toggle .icon-menu {
+        display: none;
+    }
+
+    .navbar.is-open .navbar-toggle .icon-close {
+        display: block;
+    }
+
+    /* Menu links: hidden until opened, then a vertical list */
+    .navbar-links {
+        order: 3;
+        flex: 0 0 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        margin: 0.75rem 0 0;
+        padding-top: 0.25rem;
+
+        border-top: 1px solid var(--color-background-secondary);
+    }
+
+    .navbar-links > li {
+        border-bottom: 1px solid rgba(56, 37, 28, 0.08);
+    }
+
+    .navbar-links a {
+        display: block;
+        padding: 0.8rem 0;
+
+        font-size: 1rem;
+    }
+
+    /* Log In: hidden until the menu is opened */
+    .navbar-actions {
+        order: 4;
+        flex: 0 0 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+
+        margin: 0;
+        padding: 1rem 0 0.5rem;
+    }
+
+    .navbar-login {
+        padding: 0.6rem 0;
+
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .navbar-more > summary {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem 0;
+        font-size: 1rem;
+    }
+
+    .navbar-more-menu {
+        position: static;
+        min-width: 0;
+        margin: 0;
+        padding: 0 0 0.4rem 1rem;
+
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .navbar-more-menu a {
+        padding: 0.65rem 0;
+    }
+
+    .navbar.is-open .navbar-links,
+    .navbar.is-open .navbar-actions {
+        display: flex;
+    }
+}
+
+
+/* ---------- Tablets (up to 1024px) ---------- */
+@media (max-width: 1024px) {
+
+    .near-me-header,
+    .fresh-finds-header {
+        gap: 1.5rem;
+    }
+
+    .footer-main {
+        gap: 2rem;
+    }
+
+    .trivia-info {
+        padding: 2.25rem;
+    }
+}
+
+
+/* ---------- Small tablets (up to 900px) ---------- */
+@media (max-width: 900px) {
+
+    /* Card rows: instead of stacking, each group of cards becomes one
+       row you swipe sideways. The next card peeks in from the edge so
+       people can see there is more. */
+    .fresh-finds-grid,
+    .regional-grid,
+    .popular-foods-grid {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 44%;
+
+        /* a little room so card hover shadows are not clipped */
+        padding: 0.5rem 0 1.25rem;
+
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-accent) transparent;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .fresh-finds-grid > *,
+    .regional-grid > *,
+    .popular-foods-grid > * {
+        scroll-snap-align: start;
+    }
+
+    /* Footer: 4 columns -> 2 columns, brand and about get full rows */
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 2rem;
+    }
+
+    .footer-brand,
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+
+    /* Footer bottom bar: stack the two lines */
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+
+/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+@media (max-width: 768px) {
+
+    /* Section spacing */
+    .near-me {
+        padding: 3.5rem 4%;
+    }
+
+    .fresh-finds,
+    .trivia,
+    .regional-discoveries,
+    .popular-foods,
+    .random-food {
+        padding: 2.5rem 4%;
+    }
+
+    .footer {
+        padding: 3rem 4% 1.5rem;
+    }
+
+    /* Section headings were fixed at 2.5rem, so make them fluid */
+    .near-me-header h2,
+    .fresh-finds-header h2,
+    .trivia-header h2,
+    .regional-header h2,
+    .popular-foods-header h2 {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+
+    /* Hero */
+    .intro {
+        min-height: 520px;
+        padding: 5rem 1.25rem 5.5rem;
+    }
+
+    /* Section headers that sit beside a button: stack them */
+    .near-me-header,
+    .fresh-finds-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .near-me-actions {
+        width: 100%;
+    }
+
+    /* Trivia card: image on top, text below */
+    .trivia-card {
+        grid-template-columns: 1fr;
+    }
+
+    .trivia-image {
+        height: 280px;
+        min-height: 0;
+    }
+
+    .trivia-info {
+        padding: 1.75rem;
+    }
+
+    .trivia-info h3 {
+        font-size: clamp(1.5rem, 5.5vw, 2.25rem);
+    }
+
+    /* Random-food banner */
+    .random-food-container {
+        padding: 3rem 1.5rem;
+    }
+}
+
+
+/* ---------- Phones (up to 640px) ---------- */
+@media (max-width: 640px) {
+
+    /* Swipe rows: each card is wider so about one card shows at a time,
+       with a peek of the next */
+    .fresh-finds-grid,
+    .regional-grid,
+    .popular-foods-grid {
+        grid-auto-columns: 80%;
+    }
+}
+
+
+/* ---------- Small phones (up to 480px) ---------- */
+@media (max-width: 480px) {
+
+    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+    .navbar,
+    .near-me,
+    .fresh-finds,
+    .trivia,
+    .regional-discoveries,
+    .popular-foods,
+    .random-food,
+    .footer {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    /* Navbar logo */
+    .navbar-logo {
+        gap: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+    /* Hero */
+    .intro {
+        padding: 4rem 1rem 4.5rem;
+    }
+
+    .intro-search {
+        gap: 0.5rem;
+        padding: 0.4rem 0.4rem 0.4rem 1rem;
+    }
+
+    .intro-search svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .intro-search button {
+        padding: 0.7rem 1.1rem;
+        font-size: 0.85rem;
+    }
+
+    .search-suggestions-label {
+        flex-basis: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    /* Card padding and slightly shorter images in the swipe rows */
+    .fresh-find-info,
+    .regional-info,
+    .popular-food-info {
+        padding: 1.25rem;
+    }
+
+    .fresh-find-card > img {
+        height: 190px;
+    }
+
+    .regional-card > img,
+    .popular-food-card > img {
+        height: 200px;
+    }
+
+    .trivia-info {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .trivia-image {
+        height: 220px;
+    }
+
+    /* Random-food banner */
+    .random-food-container {
+        padding: 2.5rem 1.25rem;
+    }
+
+    /* Footer */
+    .footer-logo {
+        font-size: 1.75rem;
+    }
+}
+
+
+/* ---------- Very small phones (up to 360px) ---------- */
+@media (max-width: 360px) {
+
+    .navbar-logo {
+        font-size: 1.15rem;
+    }
+
+    .navbar-logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .intro-search {
+        padding-left: 0.875rem;
+    }
+
+    .intro-search button {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Keep the search in view on short landscape screens. */
+@media (max-width: 1080px) and (orientation: landscape) and (max-height: 600px) {
+
+    .intro {
+        min-height: 0;
+        padding: 1rem 1.25rem;
+    }
+
+    .intro h1 {
+        margin-bottom: 0.75rem;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .intro-tagline {
+        margin-bottom: 1rem;
+    }
+
+    .search-suggestions {
+        margin-top: 0.75rem;
+    }
+}
+
+
+/* Give primary controls comfortable hit areas on touch-sized layouts. */
+@media (max-width: 900px), (any-pointer: coarse) {
+
+    .navbar-logo,
+    .navbar-links a,
+    .navbar-actions a,
+    .search-suggestions a,
+    .intro-search button,
+    .near-me-link,
+    .fresh-finds-link,
+    .fresh-find-info a,
+    .regional-info a,
+    .popular-foods-footer a,
+    .popular-food-info a,
+    .random-food-button,
+    .footer-logo,
+    .footer-links a,
+    .footer-explore-link,
+    .footer-legal a {
+        min-height: 44px;
+    }
+
+    .search-suggestions a,
+    .near-me-link,
+    .fresh-finds-link,
+    .footer-links a,
+    .footer-explore-link,
+    .footer-legal a {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+
+@media (min-width: 1081px) and (any-pointer: coarse) {
+
+    .navbar-links a {
+        display: inline-flex;
+        align-items: center;
+    }
+}

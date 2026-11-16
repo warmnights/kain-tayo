@@ -1,0 +1,332 @@
+
+
+/*
+
+
+FIND LOCAL FLAVORS NEAR YOU.
+
+
+*/
+
+
+.near-intro {
+    padding: 3.5rem 4%;
+
+    text-align: center;
+
+    background-color: var(--color-background-secondary);
+}
+
+.near-intro-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.near-me-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+
+    margin-bottom: 2rem;
+
+    font-size: 0.8rem;
+    color: var(--color-text);
+}
+
+.near-me-breadcrumb a {
+    color: var(--color-primary);
+}
+
+.near-me-breadcrumb span:last-child {
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+.near-intro h1 {
+    margin: 0 0 1.25rem;
+
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.15;
+
+    color: var(--color-heading);
+}
+
+.near-intro h1 span {
+    color: var(--color-accent);
+}
+
+.near-intro-content > p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    color: var(--color-text);
+}
+
+/*
+
+
+EXPLORE FOOD SPOTS
+
+
+*/
+
+
+.near-spots {
+    padding: 5rem 4%;
+
+    background-color: var(--color-background);
+
+    /* Anchor links (#near-spots) were landing under the sticky navbar */
+    scroll-margin-top: 5.5rem;
+}
+
+.near-spots-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.near-spots-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+
+    margin-bottom: 2.2rem;
+}
+
+.near-spots-header h2 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+
+    color: var(--color-heading);
+}
+
+.near-spots-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+    color: var(--color-primary);
+}
+
+.near-preview-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.8fr);
+    align-items: start;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.near-general-browse {
+    padding: 0.25rem 0 0 2rem;
+
+    border-left: 1px solid rgba(56, 37, 28, 0.2);
+}
+
+.near-general-browse h3 {
+    margin: 0 0 0.5rem;
+
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+
+    color: var(--color-heading);
+}
+
+.near-general-browse p {
+    margin: 0.75rem 0 0;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+
+    color: var(--color-text);
+}
+
+.near-general-browse ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0 0.75rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.near-general-browse a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-underline-offset: 0.2em;
+}
+
+.near-general-browse a:hover {
+    text-decoration-thickness: 2px;
+}
+
+.near-general-browse a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/*
+
+
+EVERY PLACE HAS A FLAVOR TO SHARE.
+
+
+*/
+
+
+.near-explore {
+    padding: 3.5rem 4%;
+
+    text-align: center;
+
+    background-color: var(--color-background-secondary);
+}
+
+.near-explore-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.near-explore h2 {
+    margin: 1.1rem 0;
+
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    line-height: 1.3;
+
+    color: var(--color-heading);
+}
+
+.near-explore p {
+    margin-bottom: 1.75rem;
+
+    font-size: 0.875rem;
+    line-height: 1.8;
+
+    color: var(--color-text);
+}
+
+.near-explore-button {
+    display: inline-block;
+
+    padding: 0.875rem 1.5rem;
+
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    transition: background-color 0.2s ease;
+}
+
+.near-explore-button:hover {
+    background-color: var(--color-accent);
+}
+
+
+/* ---------- Tablets (up to 1024px) ---------- */
+@media (max-width: 1024px) {
+
+    .near-spots-header {
+        gap: 1.5rem;
+    }
+
+}
+
+
+/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+@media (max-width: 768px) {
+
+    /* Section spacing */
+    .near-intro {
+        padding: 2.75rem 4% 3rem;
+    }
+
+    .near-spots {
+        padding: 3.5rem 4%;
+    }
+
+    .near-explore {
+        padding: 2.5rem 4%;
+    }
+
+    /* Section header: title block on top, location tag below */
+    .near-spots-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .near-preview-layout {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .near-general-browse {
+        padding: 0.5rem 0 0;
+
+        border-top: 1px solid rgba(56, 37, 28, 0.2);
+        border-left: 0;
+    }
+
+}
+
+
+/* ---------- Small phones (up to 480px) ---------- */
+@media (max-width: 480px) {
+
+    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+    .near-intro,
+    .near-spots,
+    .near-explore {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    /* Intro */
+    .near-me-breadcrumb {
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Section header */
+    .near-spots-header {
+        margin-bottom: 1.75rem;
+    }
+
+    .near-spots-location {
+        white-space: normal;
+    }
+
+}
+
+
+/* ---------- Very small phones (up to 360px) ---------- */
+@media (max-width: 360px) {
+
+    .near-intro h1 {
+        font-size: 2.25rem;
+    }
+
+}

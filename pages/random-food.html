@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Random Food Finder | Kain Tayo!</title>
+    <meta name="description" content="Can't decide what to eat? Get a surprise Filipino dish to try today, plus a few more cravings worth discovering.">
+
+    <link rel="icon" href="../assets/images/logo/logo-normal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/random-food.css">
+    <script src="../js/nav.js" defer></script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="../index.html" class="navbar-logo">
+            <img
+                src="../assets/images/logo/logo-normal.svg"
+                alt="Kain Tayo! logo"
+                width="36"
+                height="36">
+            <span>Kain Tayo!</span>
+        </a>
+
+        <button
+            class="navbar-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+            <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+            <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+        </button>
+
+        <ul class="navbar-links">
+            <li><a href="top-foods.html">Top Foods</a></li>
+            <li><a href="near-me.html">Near Me</a></li>
+            <li><a href="regions.html">Regions</a></li>
+            <li><a href="foods.html">All Foods</a></li>
+            <li>
+                <details class="navbar-more is-current">
+                    <summary>More</summary>
+                    <ul class="navbar-more-menu">
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="map.html">Map</a></li>
+                        <li><a href="random-food.html" aria-current="page">Random Food</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+
+        <div class="navbar-actions">
+            <a href="login.html" class="navbar-login">Log In</a>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="random-intro">
+            <div class="random-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Random Food</span>
+            </div>
+
+            <div class="random-intro-content">
+                <h1>
+                    Can't Decide?
+                    <span>Let's Eat!</span>
+                </h1>
+
+                <p>
+                    Not sure what to try today? Discover a Filipino dish
+                    worth craving and let your next food adventure begin.
+                </p>
+
+                <a
+                    href="#surprise-pick"
+                    class="random-intro-button"
+                   >
+                    View featured dish ↓
+                </a>
+            </div>
+        </section>
+
+        <section class="surprise-pick" id="surprise-pick">
+            <div class="surprise-pick-container">
+                <article class="surprise-pick-fallback">
+                    <div class="surprise-pick-image">
+                        <img
+                            loading="lazy"
+                            src="../assets/images/foods/bicol-express.jpg"
+                            alt="A serving of creamy Filipino Bicol Express">
+
+                        <span class="surprise-image-label" aria-hidden="true">
+                            FEATURED DISH
+                        </span>
+                    </div>
+
+                    <div class="surprise-pick-content">
+                        <h2>Bicol Express</h2>
+
+                        <p>
+                            Ready for something rich, creamy, and spicy?
+                            Bicol Express brings together tender pork, coconut
+                            milk, chili peppers, and shrimp paste in one
+                            unforgettable Filipino dish.
+                        </p>
+
+                        <div class="surprise-food-details">
+                            <div class="surprise-detail">
+                                <span class="detail-label">ORIGIN</span>
+                                <strong>Bicol Region</strong>
+                            </div>
+                            <div class="surprise-detail">
+                                <span class="detail-label">FLAVOR</span>
+                                <strong>Spicy &amp; Creamy</strong>
+                            </div>
+                            <div class="surprise-detail">
+                                <span class="detail-label">CATEGORY</span>
+                                <strong>Main Dish</strong>
+                            </div>
+                        </div>
+
+                        <div class="random-pick-actions">
+                            <a
+                                href="food-details.html?food=bicol-express"
+                                class="surprise-pick-button">
+                                View Bicol Express details
+                            </a>
+                            <a
+                                href="recipes.html#method-bicol-express"
+                                class="random-recipe-link">
+                                Ingredients and method
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="random-discoveries">
+            <div class="random-discoveries-header">
+                <div>
+                    <h2>
+                        A Few More <span>Cravings.</span>
+                    </h2>
+
+                    <p>
+                        Every dish has a story. Here are a few more
+                        Filipino favorites worth discovering.
+                    </p>
+                </div>
+
+                <a href="foods.html" class="discoveries-link">
+                    View All Foods →
+                </a>
+            </div>
+
+            <div class="random-discoveries-grid">
+                <article class="random-food-card">
+                    <div class="random-food-card-image">
+                        <img
+                            loading="lazy"
+                            src="../assets/images/foods/chicken-adobo.jpg"
+                            alt="Filipino Chicken Adobo">
+                    </div>
+
+                    <div class="random-food-card-content">
+                        <span class="food-card-category">CLASSIC FAVORITE</span>
+
+                        <h3>Chicken Adobo</h3>
+
+                        <p>
+                            A comforting Filipino classic simmered in
+                            soy sauce, vinegar, garlic, and spices.
+                        </p>
+
+                        <a href="food-details.html?food=chicken-adobo">
+                            View Chicken Adobo →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="random-food-card">
+                    <div class="random-food-card-image">
+                        <img
+                            loading="lazy"
+                            src="../assets/images/foods/sinigang.jpg"
+                            alt="A bowl of Filipino Sinigang">
+                    </div>
+
+                    <div class="random-food-card-content">
+                        <span class="food-card-category">COMFORT FOOD</span>
+
+                        <h3>Sinigang</h3>
+
+                        <p>
+                            A warm and comforting sour soup filled
+                            with vegetables and tender meat.
+                        </p>
+
+                        <a href="food-details.html?food=sinigang">
+                            View Sinigang →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="random-food-card">
+                    <div class="random-food-card-image">
+                        <img
+                            loading="lazy"
+                            src="../assets/images/foods/turon.jpg"
+                            alt="Golden Filipino Turon">
+                    </div>
+
+                    <div class="random-food-card-content">
+                        <span class="food-card-category">SWEET TREAT</span>
+
+                        <h3>Turon</h3>
+
+                        <p>
+                            A crispy golden snack filled with banana
+                            and wrapped in caramelized goodness.
+                        </p>
+
+                        <a href="food-details.html?food=turon">
+                            View Turon →
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="random-cta">
+            <div class="random-cta-content">
+                <h2>
+                    There's Always Something
+                    <span>Delicious to Discover.</span>
+                </h2>
+
+                <p>
+                    Explore the flavors of the Philippines and find
+                    another dish to fall in love with.
+                </p>
+
+                <a href="foods.html" class="random-cta-button">
+                    Explore Filipino Foods →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        Kain Tayo!
+                    </a>
+
+                    <p>
+                        Discover the Philippines, one bite at a time.
+                        Explore Filipino dishes, regional specialties,
+                        and the stories behind every flavor.
+                    </p>
+
+                    <span class="footer-brand-tagline">
+                        Sarap ng Pilipinas, tikman at tuklasin!
+                    </span>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Explore</h3>
+
+                    <ul>
+                        <li><a href="top-foods.html">Top Foods</a></li>
+                        <li><a href="foods.html">All Foods</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="random-food.html">Random Food</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Discover</h3>
+
+                    <ul>
+                        <li><a href="near-me.html">Near Me</a></li>
+                        <li><a href="regions.html">Regions</a></li>
+                        <li><a href="map.html">Food Map</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-about">
+                    <h3>About Kain Tayo!</h3>
+
+                    <p>
+                        More than just food, every Filipino dish
+                        tells a story of culture, tradition,
+                        and togetherness.
+                    </p>
+
+                    <a href="foods.html" class="footer-explore-link">
+                        Start Exploring →
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Kain Tayo! All rights reserved.
+                </p>
+
+                <ul class="footer-legal">
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+
+                <span>
+                    Made with ♥ for Filipino food and culture.
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

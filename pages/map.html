@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore the Philippines | Kain Tayo!</title>
+    <meta name="description" content="Explore Luzon, Visayas, and Mindanao with direct links to each island group's regional guide.">
+
+    <link rel="icon" href="../assets/images/logo/logo-normal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/map.css">
+    <script src="../js/nav.js" defer></script>
+</head>
+<body>
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="../index.html" class="navbar-logo">
+            <img
+                src="../assets/images/logo/logo-normal.svg"
+                alt="Kain Tayo! logo"
+                width="36"
+                height="36">
+            <span>Kain Tayo!</span>
+        </a>
+
+        <button
+            class="navbar-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+            <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+            <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+        </button>
+
+        <ul class="navbar-links">
+            <li><a href="top-foods.html">Top Foods</a></li>
+            <li><a href="near-me.html">Near Me</a></li>
+            <li><a href="regions.html">Regions</a></li>
+            <li>
+                <a href="foods.html">All Foods</a>
+            </li>
+            <li>
+                <details class="navbar-more is-current">
+                    <summary>More</summary>
+                    <ul class="navbar-more-menu">
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="map.html" aria-current="page">Map</a></li>
+                        <li><a href="random-food.html">Random Food</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+
+        <div class="navbar-actions">
+            <a href="login.html" class="navbar-login">
+                Log In
+            </a>
+
+        </div>
+    </nav>
+
+    <main>
+        <section class="map-intro">
+            <div class="map-intro-content">
+                <div class="map-breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <span>Map</span>
+                </div>
+
+                <h1>
+                    Explore the Philippines,
+                    <span>One Bite at a Time.</span>
+                </h1>
+
+                <p>
+                    Explore the three island groups and jump straight
+                    to each regional guide.
+                </p>
+            </div>
+        </section>
+
+        <section class="philippines-map-section">
+            <div class="philippines-map-container">
+                <div class="philippines-map-content">
+                    <h2>
+                        Three Island Groups,
+                        <span>One Rich Food Culture.</span>
+                    </h2>
+
+                    <p>
+                        Choose an island group to explore its regional
+                        food guide.
+                    </p>
+
+                    <h3 class="map-island-list-heading" id="map-island-list-heading">
+                        Choose a region
+                    </h3>
+
+                    <nav class="map-island-nav" aria-labelledby="map-island-list-heading">
+                        <ul class="map-island-list">
+                            <li>
+                                <a class="map-island-item" href="regions.html#luzon-favorites">
+                                    <span class="map-island-item-name">Luzon</span>
+                                    <span class="map-island-item-region">Northern Philippines</span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 12h14m-6-6 6 6-6 6"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="map-island-item" href="regions.html#visayas-favorites">
+                                    <span class="map-island-item-name">Visayas</span>
+                                    <span class="map-island-item-region">Central Philippines</span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 12h14m-6-6 6 6-6 6"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="map-island-item" href="regions.html#mindanao-favorites">
+                                    <span class="map-island-item-name">Mindanao</span>
+                                    <span class="map-island-item-region">Southern Philippines</span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 12h14m-6-6 6 6-6 6"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <a href="regions.html" class="map-explore-button">
+                        Explore Philippine Regions →
+                    </a>
+                </div>
+
+                <div class="philippines-map-image">
+                    <img
+                        loading="lazy"
+                        src="../assets/images/map/island-groups-philippines.png"
+                        width="2465"
+                        height="3615"
+                        alt="Silhouette map of the Philippine archipelago; group boundaries are not labeled">
+                </div>
+            </div>
+        </section>
+
+        <section class="map-cta">
+            <div class="map-cta-content">
+                <h2>
+                    Every Place Has a
+                    <span>Flavor Worth Discovering.</span>
+                </h2>
+
+                <p>
+                    Continue your food journey and discover the
+                    many dishes that make the Philippines special.
+                </p>
+
+                <a href="foods.html" class="map-cta-button">
+                    Discover Filipino Foods →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        Kain Tayo!
+                    </a>
+
+                    <p>
+                        Discover the Philippines, one bite at a time.
+                        Explore Filipino dishes, regional specialties,
+                        and the stories behind every flavor.
+                    </p>
+
+                    <span class="footer-brand-tagline">
+                        Sarap ng Pilipinas, tikman at tuklasin!
+                    </span>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Explore</h3>
+
+                    <ul>
+                        <li><a href="top-foods.html">Top Foods</a></li>
+                        <li><a href="foods.html">All Foods</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="random-food.html">Random Food</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Discover</h3>
+
+                    <ul>
+                        <li><a href="near-me.html">Near Me</a></li>
+                        <li><a href="regions.html">Regions</a></li>
+                        <li><a href="map.html">Food Map</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-about">
+                    <h3>About Kain Tayo!</h3>
+
+                    <p>
+                        More than just food, every Filipino dish
+                        tells a story of culture, tradition,
+                        and togetherness.
+                    </p>
+
+                    <a href="foods.html" class="footer-explore-link">
+                        Start Exploring →
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Kain Tayo! All rights reserved.
+                </p>
+
+                <ul class="footer-legal">
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+
+                <span>
+                    Made with ♥ for Filipino food and culture.
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
