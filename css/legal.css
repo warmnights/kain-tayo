@@ -3,18 +3,18 @@
 /*
 
 
-LEGAL INTRO
+    LEGAL INTRO
 
 
 */
 
 
 .legal-intro {
-    padding: 3.5rem 4%;
-
-    text-align: center;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
+
+    text-align: center;
 }
 
 .legal-intro-content {
@@ -24,33 +24,28 @@ LEGAL INTRO
 
 .legal-breadcrumb {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.65rem;
 
     margin-bottom: 2rem;
 
-    font-size: 0.8rem;
     color: var(--color-primary);
-}
 
-.legal-breadcrumb a {
-    color: var(--color-primary);
+    font-size: 0.8rem;
 }
 
 .legal-breadcrumb span:last-child {
     color: var(--color-heading);
+
     font-weight: 600;
 }
 
 .legal-intro h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 7vw, 4.5rem);
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .legal-intro h1 span {
@@ -59,52 +54,53 @@ LEGAL INTRO
 
 .legal-intro-content > p {
     max-width: 650px;
-
     margin: 1.25rem auto 1.75rem;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .legal-updated {
     display: inline-block;
 
     padding: 0.55rem 1rem;
-
     border: 1px solid var(--color-accent);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
+
+    color: var(--color-primary);
 
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 1px;
-
-    color: var(--color-primary);
 }
 
 
 /*
 
 
-LEGAL CONTENT
+    LEGAL CONTENT
 
 
 */
 
 
-/* First section after the intro: extra breathing room */
+/*
+
+    First section after the intro: extra breathing room
+
+*/
+
 .legal-section {
-    padding: 5rem 4%;
+    padding-block: 5rem;
 
     background-color: var(--color-background);
 }
 
 .legal-container {
     display: grid;
-    grid-template-columns: 260px 1fr;
     align-items: start;
     gap: 4rem;
+    grid-template-columns: 260px 1fr;
 
     max-width: 1100px;
     margin: 0 auto;
@@ -115,8 +111,7 @@ LEGAL CONTENT
     top: 6.5rem;
 
     padding: 1.5rem;
-
-    border-radius: 12px;
+    border-radius: var(--radius-md);
 
     background-color: var(--color-background-secondary);
 }
@@ -124,26 +119,23 @@ LEGAL CONTENT
 .legal-toc h2 {
     margin: 0 0 1rem;
 
-    font-family: var(--font-heading);
     font-size: 1.25rem;
-
-    color: var(--color-heading);
 }
 
 .legal-toc ol {
+    list-style: decimal;
+
     margin: 0;
     padding-left: 1.25rem;
-
-    list-style: decimal;
 }
 
 .legal-toc li {
     margin-bottom: 0.6rem;
 
+    color: var(--color-primary);
+
     font-size: 0.85rem;
     line-height: 1.5;
-
-    color: var(--color-primary);
 }
 
 .legal-toc a {
@@ -152,6 +144,7 @@ LEGAL CONTENT
 
 .legal-toc a:hover {
     color: var(--color-primary);
+
     text-decoration: underline;
     text-underline-offset: 0.18em;
 }
@@ -160,36 +153,32 @@ LEGAL CONTENT
     max-width: 760px;
 }
 
+/*
+
+    Long words, like email addresses, wrap (overflow-wrap) instead of
+    overflowing on very small screens
+
+*/
+
 .legal-block {
     margin-bottom: 2.5rem;
     padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-border);
 
-    border-bottom: 1px solid rgba(100, 30, 22, 0.12);
-
-    /* Long words, like email addresses, wrap instead of overflowing on
-       very small screens */
     overflow-wrap: break-word;
-
-    /* The table of contents links jump to these blocks. Without this the
-       sticky navbar covered the top of the heading. */
-    scroll-margin-top: 6.5rem;
 }
 
 .legal-block:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
-
     border-bottom: none;
 }
 
 .legal-block h2 {
     margin: 0 0 1rem;
 
-    font-family: var(--font-heading);
     font-size: 1.8rem;
     line-height: 1.25;
-
-    color: var(--color-heading);
 }
 
 .legal-block p {
@@ -197,8 +186,6 @@ LEGAL CONTENT
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .legal-block p:last-child {
@@ -206,10 +193,10 @@ LEGAL CONTENT
 }
 
 .legal-block ul {
+    list-style: disc;
+
     margin: 0 0 1rem;
     padding-left: 1.25rem;
-
-    list-style: disc;
 }
 
 .legal-block li {
@@ -217,8 +204,6 @@ LEGAL CONTENT
 
     font-size: 0.95rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .legal-block li::marker {
@@ -226,10 +211,9 @@ LEGAL CONTENT
 }
 
 .legal-block p a {
-    font-weight: 600;
-
     color: var(--color-primary);
 
+    font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -239,23 +223,35 @@ LEGAL CONTENT
 }
 
 
+/*
+
+
+    MEDIA QUERIES
+
+
+*/
+
+
 /* ---------- Tablets (up to 1024px) ---------- */
+
 @media (max-width: 1024px) {
 
     .legal-container {
-        grid-template-columns: 220px 1fr;
         gap: 2.5rem;
+        grid-template-columns: 220px 1fr;
     }
 }
 
 
 /* ---------- Small tablets (up to 900px) ---------- */
+
 @media (max-width: 900px) {
 
     /* Table of contents on top (no longer sticky), text below */
+
     .legal-container {
-        grid-template-columns: 1fr;
         gap: 2.5rem;
+        grid-template-columns: 1fr;
     }
 
     .legal-toc {
@@ -278,16 +274,18 @@ LEGAL CONTENT
 
 
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
     /* Section spacing: the first section after the intro keeps a little
-       extra room (same as the other pages) */
+       extra room */
+
     .legal-intro {
-        padding: 2.75rem 4% 3rem;
+        padding-block: 2.75rem 3rem;
     }
 
     .legal-section {
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .legal-block {
@@ -302,6 +300,7 @@ LEGAL CONTENT
 
 
 /* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
 
     .legal-toc ol {
@@ -311,13 +310,14 @@ LEGAL CONTENT
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+
     .legal-intro,
     .legal-section {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        --gutter-x: 1.25rem;
     }
 
     .legal-intro {
@@ -326,6 +326,7 @@ LEGAL CONTENT
 
     .legal-breadcrumb {
         flex-wrap: wrap;
+
         margin-bottom: 1.5rem;
     }
 
@@ -336,6 +337,7 @@ LEGAL CONTENT
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .legal-intro h1 {

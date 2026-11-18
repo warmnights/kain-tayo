@@ -3,18 +3,18 @@
 /*
 
 
-A WORLD OF FILIPINO FLAVORS
+    A WORLD OF FILIPINO FLAVORS.
 
 
 */
 
 
 .foods-intro {
-    padding: 3.5rem 4%;
-
-    text-align: center;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
+
+    text-align: center;
 }
 
 .foods-intro-content {
@@ -24,14 +24,13 @@ A WORLD OF FILIPINO FLAVORS
 
 .foods-breadcrumb {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.65rem;
 
     margin-bottom: 2rem;
 
     font-size: 0.8rem;
-    color: var(--color-text);
 }
 
 .foods-breadcrumb a {
@@ -40,23 +39,32 @@ A WORLD OF FILIPINO FLAVORS
 
 .foods-breadcrumb span:last-child {
     color: var(--color-heading);
+
     font-weight: 600;
 }
 
 .foods-intro .section-eyebrow {
-    display: block;
     margin-bottom: 1rem;
+}
+
+/*
+
+    Eyebrows on this page use the heading color; the global default is the accent color
+
+*/
+
+.foods-intro .section-eyebrow,
+.food-categories-header .section-eyebrow,
+.food-directory-header .section-eyebrow,
+.regional-discovery-content .section-eyebrow {
     color: var(--color-heading);
 }
 
 .foods-intro h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 7vw, 5rem);
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .foods-intro h1 span {
@@ -69,83 +77,82 @@ A WORLD OF FILIPINO FLAVORS
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 
 /*
 
 
-BROWSE BY CATEGORY
+    BROWSE BY CATEGORY
 
 
 */
 
 
-/* First section after the intro: extra breathing room */
+/*
+
+    First section after the intro: extra breathing room
+
+*/
+
 .food-categories {
     padding: 4rem 4% 5rem;
 
     background-color: var(--color-background);
 }
 
-.food-categories-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 .food-categories-header {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
+    align-items: flex-end;
     gap: 2rem;
 
     margin-bottom: 2rem;
 }
 
-.food-categories-header .section-eyebrow {
-    display: block;
-    margin-bottom: 0.75rem;
-    color: var(--color-heading);
-}
-
 .food-categories-header h2 {
     margin: 0;
-
-    font-family: var(--font-heading);
-
-    color: var(--color-heading);
 }
 
 .food-categories-header p {
     max-width: 430px;
-
     margin: 0;
 
     font-size: 0.9rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .food-category-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
     gap: 1.25rem;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .food-category-card {
     position: relative;
 
     display: block;
-    height: 260px;
-
     overflow: hidden;
 
-    border-radius: 12px;
+    height: 260px;
+    border-radius: var(--radius-md);
 
     background-color: var(--color-primary);
+}
+
+.food-category-card:hover img {
+    transform: scale(1.06);
+}
+
+/*
+
+    Visible keyboard focus (drawn inside the card so it is never clipped)
+
+*/
+
+.food-category-card:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: -3px;
 }
 
 .food-category-card img {
@@ -168,198 +175,170 @@ BROWSE BY CATEGORY
 
     background: linear-gradient(
         transparent 20%,
-        rgba(40, 15, 10, 0.85)
+        color-mix(in srgb, var(--color-background) 85%, transparent)
     );
-}
-
-.food-category-card:hover img {
-    transform: scale(1.06);
-}
-
-/* Visible keyboard focus (drawn inside the card so it is never clipped) */
-.food-category-card:focus-visible {
-    outline: 3px solid var(--color-secondary);
-    outline-offset: -3px;
 }
 
 .food-category-info {
     position: absolute;
-    z-index: 1;
-
     right: 1rem;
     bottom: 1.25rem;
     left: 1rem;
+    z-index: 1;
 
     color: var(--color-white);
 }
 
 .food-category-info span {
     display: inline-block;
-    padding: 0.1rem 0.4rem;
 
-    border-radius: 999px;
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-pill);
+
+    color: var(--color-background-secondary);
+    background-color: var(--color-primary);
 
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
-
-    color: var(--color-background-secondary);
-    background-color: var(--color-primary);
 }
 
 .food-category-info h3 {
     margin: 0.35rem 0;
 
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-
     color: var(--color-white);
+
+    font-size: 1.3rem;
 }
+
+/*
+
+    Light text: the dark maroon was unreadable on the dark photo overlay
+
+*/
 
 .food-category-info p {
     margin: 0;
 
+    color: var(--color-text);
+
     font-size: 0.875rem;
-    color: var(--color-background-secondary);
 }
 
 
 /*
 
 
-DISCOVER THE DISHES
+    DISCOVER THE DISHES
 
 
 */
 
 
 .food-directory {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
 }
 
-.food-directory-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 .food-directory-header {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
+    align-items: flex-end;
     gap: 2rem;
 
     margin-bottom: 3rem;
 }
 
-.food-directory-header .section-eyebrow {
-    display: block;
-    margin-bottom: 0.75rem;
-    color: var(--color-heading);
-}
-
 .food-directory-header h2 {
     margin: 0;
-
-    font-family: var(--font-heading);
-    color: var(--color-heading);
 }
 
 .food-directory-header p {
     max-width: 600px;
-
     margin: 0.75rem 0 0;
 
     font-size: 0.9rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .food-count {
     padding: 0.65rem 1rem;
-
     border: 1px solid var(--color-accent);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
+
+    color: var(--color-heading);
 
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
-
-    color: var(--color-heading);
     white-space: nowrap;
 }
 
 .food-directory-section {
     margin-bottom: 3.5rem;
-
-    /* The category cards jump to these sections (#main-dishes, #soups...).
-       Without this the sticky navbar covered the section title. */
-    scroll-margin-top: 5.5rem;
 }
 
 .food-directory-title {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
 
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
-
-    border-bottom: 1px solid rgba(100, 30, 22, 0.15);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-background-secondary) 15%, transparent);
 }
 
 .food-directory-title h3 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 1.8rem;
-
-    color: var(--color-heading);
 }
 
 .food-directory-title span {
     flex-shrink: 0;
 
+    color: var(--color-heading);
+
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
     white-space: nowrap;
-
-    color: var(--color-heading);
 }
 
 .food-directory-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .food-directory-card {
     overflow: hidden;
 
-    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--color-background-secondary) 8%, transparent);
+    border-radius: var(--radius-md);
 
     background-color: var(--color-background);
-
-    border: 1px solid rgba(100, 30, 22, 0.08);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .food-directory-card:hover {
-    transform: translateY(-4px);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-black) 12%, transparent);
 
-    box-shadow: 0 8px 24px rgba(56, 37, 28, 0.12);
+    transform: translateY(-4px);
+}
+
+.food-directory-card:hover .food-directory-image img {
+    transform: scale(1.05);
 }
 
 .food-directory-image {
     display: block;
-    height: 220px;
-
     overflow: hidden;
+
+    height: 220px;
 }
 
 .food-directory-image img {
@@ -371,54 +350,54 @@ DISCOVER THE DISHES
     transition: transform 0.3s ease;
 }
 
-.food-directory-card:hover .food-directory-image img {
-    transform: scale(1.05);
-}
-
 .food-directory-info {
     padding: 1.4rem;
 }
 
 .food-directory-info > span {
+    color: var(--color-heading);
+
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-
-    color: var(--color-heading);
 }
 
 .food-directory-info h4 {
     margin: 0.5rem 0;
 
-    font-family: var(--font-heading);
     font-size: 1.5rem;
-
-    color: var(--color-heading);
 }
 
 .food-directory-info p {
     min-height: 55px;
-
     margin: 0 0 1rem;
 
     font-size: 0.85rem;
-    line-height: 1.7;
-
-    color: var(--color-text);
 }
 
 .food-directory-info a {
+    color: var(--color-primary);
+
     font-size: 0.8rem;
     font-weight: 600;
-
-    color: var(--color-primary);
 }
 
 .food-directory-info a:hover {
     color: var(--color-heading);
+
     text-decoration: underline;
     text-underline-offset: 0.15em;
 }
+
+
+/*
+
+
+    FOOD SEARCH
+
+
+*/
+
 
 .food-search {
     margin: -1rem 0 2rem;
@@ -440,62 +419,65 @@ DISCOVER THE DISHES
 
 .food-search label {
     display: block;
+
     margin-bottom: 0.5rem;
+
+    color: var(--color-heading);
 
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-heading);
 }
 
 .food-search-controls {
     display: flex;
     gap: 0.75rem;
+
     max-width: 600px;
 }
 
+/*
+
+    Dark text: cream text on this white field is only about 1.1:1 contrast
+
+*/
+
 .food-search input {
     flex: 1;
+
     min-width: 0;
     padding: 0.8rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-background-secondary) 25%, transparent);
+    border-radius: var(--radius-sm);
 
-    border: 1px solid rgba(100, 30, 22, 0.25);
-    border-radius: 8px;
-
+    color: var(--color-background);
     background: var(--color-white);
-    color: var(--color-text);
+
     font: inherit;
 }
 
-.food-search input::placeholder {
-    color: #80695B;
-    opacity: 1;
-}
+/*
 
-.food-search input:focus-visible,
-.food-search button:focus-visible,
-.food-search-empty a:focus-visible,
-.food-detail-back:focus-visible,
-.food-detail-link:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 3px;
-}
+    Dark text: white on the gold primary color is only about 1.8:1 contrast
+
+*/
 
 .food-search button,
 .food-detail-link {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
     min-height: 2.75rem;
     padding: 0.7rem 1.25rem;
-
     border: 0;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
 
+    color: var(--color-background);
     background: var(--color-primary);
-    color: var(--color-white);
+
     font: inherit;
     font-weight: 600;
-    text-decoration: none;
+
     cursor: pointer;
 }
 
@@ -504,37 +486,69 @@ DISCOVER THE DISHES
     background: var(--color-accent);
 }
 
+.food-search input:focus-visible,
+.food-search button:focus-visible,
+.food-search-empty a:focus-visible,
+.food-detail-back:focus-visible,
+.food-detail-link:focus-visible {
+    outline: 3px solid var(--color-accent);
+}
+
+.food-search input::placeholder {
+    color: color-mix(in srgb, var(--color-background) 60%, transparent);
+    opacity: 1;
+}
+
 .food-search-status {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     clip-path: inset(50%);
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
     white-space: nowrap;
 }
+
+/*
+
+    Dark text: cream text on this white box is only about 1.1:1 contrast
+
+*/
 
 .food-search-empty,
 .food-search-noscript {
     margin: 0 0 2rem;
     padding: 1rem 1.25rem;
+    border: 1px solid color-mix(in srgb, var(--color-background-secondary) 15%, transparent);
+    border-radius: var(--radius-sm);
 
-    border: 1px solid rgba(100, 30, 22, 0.15);
-    border-radius: 8px;
-
-    color: var(--color-text);
+    color: var(--color-background);
     background: var(--color-white);
-    line-height: 1.7;
 }
 
 .food-search-empty a {
-    color: var(--color-primary);
+    color: var(--color-accent);
+
     font-weight: 600;
 }
 
+
+/*
+
+
+    FOOD DETAIL
+
+
+*/
+
+
 .food-detail {
     padding: 4rem 4%;
+
     background: var(--color-background-secondary);
 }
 
@@ -545,11 +559,12 @@ DISCOVER THE DISHES
 
 .food-detail-back {
     display: inline-block;
+
     margin-bottom: 1.5rem;
 
     color: var(--color-primary);
+
     font-weight: 600;
-    text-underline-offset: 0.2em;
 }
 
 .food-detail-card {
@@ -557,62 +572,81 @@ DISCOVER THE DISHES
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
     overflow: hidden;
 
-    border: 1px solid rgba(100, 30, 22, 0.12);
-    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--color-background-secondary) 12%, transparent);
+    border-radius: var(--radius-md);
+
     background: var(--color-white);
 }
 
 .food-detail-image {
     min-height: 420px;
+
     background: var(--color-background);
 }
 
 .food-detail-image img {
-    display: block;
     width: 100%;
     height: 100%;
     min-height: inherit;
+
     object-fit: cover;
 }
 
 .food-detail-content {
     align-self: center;
+
     padding: clamp(2rem, 5vw, 4rem);
 }
 
 .food-detail-category {
     margin: 0.75rem 0 0;
+
+    color: var(--color-accent);
+
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--color-accent);
-}
-
-.food-detail-content h1,
-.food-detail-not-found h1 {
-    margin: 0;
-    font-family: var(--font-heading);
-    font-size: clamp(2.25rem, 5vw, 3.75rem);
-    line-height: 1.1;
-    color: var(--color-heading);
-}
-
-.food-detail-description,
-.food-detail-not-found p {
-    margin: 1.25rem 0 1.75rem;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--color-text);
 }
 
 .food-detail-not-found {
     max-width: 700px;
     padding: clamp(2rem, 5vw, 4rem);
-    border: 1px solid rgba(100, 30, 22, 0.12);
-    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--color-background-secondary) 12%, transparent);
+    border-radius: var(--radius-md);
+
     background: var(--color-white);
 }
+
+/*
+
+    Dark text on the white card: gold and cream are only about 1.8:1 and 1.1:1 contrast
+
+*/
+
+.food-detail-content h1,
+.food-detail-not-found h1 {
+    margin: 0;
+
+    color: var(--color-background);
+
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+.food-detail-description,
+.food-detail-not-found p {
+    margin: 1.25rem 0 1.75rem;
+
+    color: var(--color-background);
+
+    line-height: 1.8;
+}
+
+/*
+
+    Keeps the hidden attribute working on elements that set their own display
+
+*/
 
 [hidden] {
     display: none !important;
@@ -622,7 +656,7 @@ DISCOVER THE DISHES
 /*
 
 
-ONE COUNTRY, COUNTLESS FLAVORS.
+    ONE COUNTRY. COUNTLESS FLAVORS.
 
 
 */
@@ -636,19 +670,19 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 
 .regional-discovery-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
+    grid-template-columns: 1fr 1fr;
 
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .regional-discovery-image {
-    height: 380px;
     overflow: hidden;
 
-    border-radius: 12px;
+    height: 380px;
+    border-radius: var(--radius-md);
 }
 
 .regional-discovery-image img {
@@ -659,24 +693,13 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 }
 
 .regional-discovery-content .section-eyebrow {
-    display: block;
     margin-bottom: 1rem;
-    color: var(--color-heading);
 }
 
 .regional-discovery-content h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     line-height: 1.2;
-
-    color: var(--color-heading);
-}
-
-.food-categories-header h2,
-.food-directory-header h2,
-.regional-discovery-content h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
 .regional-discovery-content p {
@@ -684,22 +707,25 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 
     font-size: 0.9rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
+
+/*
+
+    Dark text: white on the gold primary color is only about 1.8:1 contrast
+
+*/
 
 .regional-discovery-button {
     display: inline-block;
 
     padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
     font-size: 0.85rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 
     transition: background-color 0.2s ease;
 }
@@ -709,29 +735,18 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 }
 
 
-/* ---------- Respect "reduce motion" settings ---------- */
-@media (prefers-reduced-motion: reduce) {
+/*
 
-    .food-category-card img,
-    .food-directory-card,
-    .food-directory-image img {
-        transition: none;
-    }
 
-    .food-category-card:hover img,
-    .food-directory-card:hover,
-    .food-directory-card:hover .food-directory-image img {
-        transform: none;
-    }
-}
+    MEDIA QUERIES
+
+
+*/
 
 
 /* ---------- Tablets (up to 1024px) ---------- */
-@media (max-width: 1024px) {
 
-    .regional-discovery-container {
-        gap: 2.5rem;
-    }
+@media (max-width: 1024px) {
 
     .food-category-grid {
         gap: 1rem;
@@ -742,27 +757,32 @@ ONE COUNTRY, COUNTLESS FLAVORS.
         bottom: 1rem;
         left: 0.85rem;
     }
+
+    .regional-discovery-container {
+        gap: 2.5rem;
+    }
 }
 
 
 /* ---------- Small tablets (up to 900px) ---------- */
+
 @media (max-width: 900px) {
 
-    /* Category tiles: one row you swipe sideways. The tiles are small,
-       so about three show at once, with the next one peeking in. */
+    /* Category tiles: one row you swipe sideways. The tiles are small, so
+       about three show at once. */
+
     .food-category-grid {
         grid-template-columns: none;
         grid-auto-flow: column;
         grid-auto-columns: 32%;
-
-        padding: 0 0 1rem;
-
         overflow-x: auto;
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
         scrollbar-color: var(--color-accent) transparent;
         -webkit-overflow-scrolling: touch;
+
+        padding: 0 0 1rem;
     }
 
     .food-category-grid > * {
@@ -772,14 +792,16 @@ ONE COUNTRY, COUNTLESS FLAVORS.
     /* Dish directory: stays a normal grid (2 across) instead of a swipe
        row. Several sections hold only 1 or 2 dishes, which would look
        empty in a swipe row, and the category tiles jump to each section. */
+
     .food-directory-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     /* "One Country. Countless Flavors.": photo on top, text below */
+
     .regional-discovery-container {
-        grid-template-columns: 1fr;
         gap: 2rem;
+        grid-template-columns: 1fr;
     }
 
     .regional-discovery-image {
@@ -789,25 +811,27 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 
 
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
     /* Section spacing: the first section after the intro keeps a little
        extra room, the rest are tighter (same as the other pages) */
+
     .foods-intro {
-        padding: 2.75rem 4% 3rem;
+        padding-block: 2.75rem 3rem;
     }
 
     .food-categories {
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .food-directory,
     .regional-discovery {
-        padding: 2.5rem 4%;
+        padding-block: 2.5rem;
     }
 
     .food-detail {
-        padding: 3rem 4%;
+        padding-block: 3rem;
     }
 
     .food-detail-card {
@@ -816,8 +840,8 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 
     .food-detail-image,
     .food-detail-image img {
-        min-height: 300px;
         height: 300px;
+        min-height: 300px;
     }
 
     .food-directory-title h3 {
@@ -825,6 +849,7 @@ ONE COUNTRY, COUNTLESS FLAVORS.
     }
 
     /* Section headers: title block on top, the extra text or tag below */
+
     .food-categories-header,
     .food-directory-header {
         flex-direction: column;
@@ -847,9 +872,12 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 
 
 /* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
 
-    /* Category tiles: about two show at once, with a peek of the next */
+    /* Category tiles: one full tile shows, with most of the next one
+       peeking in */
+
     .food-category-grid {
         grid-auto-columns: 56%;
     }
@@ -859,6 +887,7 @@ ONE COUNTRY, COUNTLESS FLAVORS.
     }
 
     /* Dish directory: one dish per row */
+
     .food-directory-grid {
         grid-template-columns: 1fr;
     }
@@ -870,24 +899,32 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+
     .foods-intro,
+    .food-directory {
+        --gutter-x: 1.25rem;
+    }
+
     .food-categories,
-    .food-directory,
     .regional-discovery {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
 
     /* Intro */
+
     .foods-breadcrumb {
         flex-wrap: wrap;
+
         margin-bottom: 1.5rem;
     }
 
     /* Category tiles */
+
     .food-category-grid {
         grid-auto-columns: 70%;
     }
@@ -897,6 +934,7 @@ ONE COUNTRY, COUNTLESS FLAVORS.
     }
 
     /* Dish directory */
+
     .food-directory-header {
         margin-bottom: 1.75rem;
     }
@@ -909,28 +947,6 @@ ONE COUNTRY, COUNTLESS FLAVORS.
         height: 200px;
     }
 
-    .food-search-controls {
-        flex-direction: column;
-    }
-
-    .food-search button {
-        width: 100%;
-    }
-
-    .food-detail {
-        padding: 2.5rem 1.25rem;
-    }
-
-    .food-detail-image,
-    .food-detail-image img {
-        min-height: 230px;
-        height: 230px;
-    }
-
-    .food-detail-content {
-        padding: 1.5rem;
-    }
-
     .food-directory-info {
         padding: 1.25rem;
     }
@@ -939,7 +955,34 @@ ONE COUNTRY, COUNTLESS FLAVORS.
         min-height: 0;
     }
 
+    /* Search */
+
+    .food-search-controls {
+        flex-direction: column;
+    }
+
+    .food-search button {
+        width: 100%;
+    }
+
+    /* Dish detail */
+
+    .food-detail {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .food-detail-image,
+    .food-detail-image img {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .food-detail-content {
+        padding: 1.5rem;
+    }
+
     /* Regional discovery */
+
     .regional-discovery-image {
         height: 220px;
     }
@@ -947,9 +990,28 @@ ONE COUNTRY, COUNTLESS FLAVORS.
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .foods-intro h1 {
         font-size: 2.25rem;
+    }
+}
+
+
+/* ---------- Respect "reduce motion" settings ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .food-category-card img,
+    .food-directory-card,
+    .food-directory-image img {
+        transition: none;
+    }
+
+    .food-category-card:hover img,
+    .food-directory-card:hover,
+    .food-directory-card:hover .food-directory-image img {
+        transform: none;
     }
 }

@@ -3,38 +3,36 @@
 /*
 
 
-CAN'T DECIDE? LET'S EAT!
+    CAN'T DECIDE? LET'S EAT!
 
 
 */
 
 
 .random-intro {
-    padding: 3.5rem 4%;
-
-    text-align: center;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
+
+    text-align: center;
 }
 
 .random-breadcrumb {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.65rem;
 
     margin-bottom: 2rem;
 
-    font-size: 0.8rem;
     color: var(--color-primary);
-}
 
-.random-breadcrumb a {
-    color: var(--color-primary);
+    font-size: 0.8rem;
 }
 
 .random-breadcrumb span:last-child {
     color: var(--color-heading);
+
     font-weight: 600;
 }
 
@@ -46,73 +44,83 @@ CAN'T DECIDE? LET'S EAT!
 .random-intro-content h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 7vw, 5rem);
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .random-intro-content h1 span {
     display: block;
+
     color: var(--color-accent);
 }
 
 .random-intro-content p {
     max-width: 650px;
-
     margin: 1.25rem auto 2rem;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
-}
-
-.random-intro-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 44px;
-    padding: 0.9rem 1.5rem;
-
-    border: 0;
-    border-radius: 8px;
-
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.5;
-    text-decoration: none;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
-
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.random-intro-button:hover {
-    background-color: var(--color-accent);
 }
 
 /*
 
+    Also used by .surprise-pick-button and .random-cta-button
 
-TODAY'S SURPRISE PICK
+*/
+
+.random-intro-button,
+.surprise-pick-button,
+.random-cta-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 44px;
+    padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
+
+    color: var(--color-background);
+    background-color: var(--color-primary);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    transition: background-color 0.2s ease;
+}
+
+.random-intro-button:hover,
+.surprise-pick-button:hover,
+.random-cta-button:hover {
+    background-color: var(--color-accent);
+}
+
+.random-intro-button:active,
+.surprise-pick-button:active,
+.random-cta-button:active {
+    transform: translateY(1px);
+}
+
+
+/*
+
+
+    FEATURED DISH: BICOL EXPRESS
 
 
 */
 
 
-/* First section after the intro: extra breathing room */
+/*
+
+    First section after the intro: extra breathing room
+
+*/
+
 .surprise-pick {
-    padding: 5rem 4%;
+    padding-block: 5rem;
 
     background-color: var(--color-background);
-
-    /* Keep this section visible below the sticky navbar when linked to. */
-    scroll-margin-top: 5.5rem;
 }
 
 .surprise-pick-container {
@@ -122,18 +130,18 @@ TODAY'S SURPRISE PICK
 
 .surprise-pick-fallback {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
+    grid-template-columns: 1fr 1fr;
 }
 
 .surprise-pick-image {
     position: relative;
-    height: 430px;
 
     overflow: hidden;
 
-    border-radius: 12px;
+    height: 430px;
+    border-radius: var(--radius-md);
 }
 
 .surprise-pick-image img {
@@ -149,11 +157,10 @@ TODAY'S SURPRISE PICK
     left: 1.25rem;
 
     padding: 0.7rem 1rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
-
+    color: var(--color-background);
     background-color: var(--color-primary);
-    color: var(--color-white);
 
     font-size: 0.75rem;
     font-weight: 600;
@@ -168,11 +175,8 @@ TODAY'S SURPRISE PICK
 .surprise-pick-content h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 3.5rem;
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .surprise-pick-content h2 span {
@@ -184,8 +188,6 @@ TODAY'S SURPRISE PICK
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .surprise-food-details {
@@ -195,9 +197,8 @@ TODAY'S SURPRISE PICK
 
     margin: 2rem 0;
     padding: 1.25rem 0;
-
-    border-top: 1px solid rgba(100, 30, 22, 0.15);
-    border-bottom: 1px solid rgba(100, 30, 22, 0.15);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .random-pick-actions {
@@ -214,82 +215,58 @@ TODAY'S SURPRISE PICK
 }
 
 .detail-label {
+    color: var(--color-primary);
+
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.08em;
-
-    color: var(--color-primary);
 }
 
 .surprise-detail strong {
-    font-size: 0.85rem;
     color: var(--color-heading);
-}
 
-.surprise-pick-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 44px;
-    padding: 0.9rem 1.5rem;
-
-    border: 0;
-    border-radius: 8px;
-
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.5;
-    text-decoration: none;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
-
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.surprise-pick-button:hover {
-    background-color: var(--color-accent);
+    font-size: 0.85rem;
 }
 
 .random-recipe-link {
     display: inline-flex;
     align-items: center;
+
     min-height: 44px;
 
     color: var(--color-primary);
+
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 0.18em;
 }
 
-.random-recipe-link:hover,
-.random-food-card-content a:hover {
+.random-recipe-link:hover {
     text-decoration-thickness: 2px;
     text-underline-offset: 0.25em;
 }
 
+
 /*
 
 
-A FEW MORE CRAVINGS.
+    A FEW MORE CRAVINGS.
 
 
 */
 
 
 .random-discoveries {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
 }
 
 .random-discoveries-header {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
+    align-items: flex-end;
     gap: 2rem;
 
     max-width: 1200px;
@@ -299,10 +276,7 @@ A FEW MORE CRAVINGS.
 .random-discoveries-header h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 2.7rem;
-
-    color: var(--color-heading);
 }
 
 .random-discoveries-header h2 span {
@@ -311,42 +285,35 @@ A FEW MORE CRAVINGS.
 
 .random-discoveries-header p {
     max-width: 600px;
-
     margin: 0.75rem 0 0;
 
     font-size: 0.9rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .discoveries-link {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
-
     flex-shrink: 0;
 
+    min-height: 44px;
     margin-bottom: 0.4rem;
+
+    color: var(--color-primary);
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-primary);
-
-    transition: color 0.2s ease;
 }
 
 .discoveries-link:hover {
-    color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 0.18em;
 }
 
 .random-discoveries-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
 
     max-width: 1200px;
     margin: 0 auto;
@@ -355,26 +322,24 @@ A FEW MORE CRAVINGS.
 .random-food-card {
     overflow: hidden;
 
-    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
 
     background-color: var(--color-background);
-
-    border: 1px solid rgba(100, 30, 22, 0.08);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .random-food-card:hover {
-    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
 
-    box-shadow: 0 8px 24px rgba(56, 37, 28, 0.12);
+    transform: translateY(-4px);
 }
 
 .random-food-card-image {
-    display: block;
-    height: 220px;
-
     overflow: hidden;
+
+    height: 220px;
 }
 
 .random-food-card-image img {
@@ -395,66 +360,61 @@ A FEW MORE CRAVINGS.
 }
 
 .food-card-category {
+    color: var(--color-primary);
+
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
-
-    color: var(--color-primary);
 }
 
 .random-food-card-content h3 {
     margin: 0.5rem 0;
 
-    font-family: var(--font-heading);
     font-size: 1.5rem;
-
-    color: var(--color-heading);
 }
 
 .random-food-card-content p {
     min-height: 55px;
-
     margin: 0 0 1rem;
 
     font-size: 0.85rem;
-    line-height: 1.7;
-
-    color: var(--color-text);
 }
 
 .random-food-card-content a {
     display: inline-flex;
     align-items: center;
+
     min-height: 44px;
+
+    color: var(--color-primary);
 
     font-size: 0.8rem;
     font-weight: 600;
-
-    color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 0.18em;
 }
 
 .random-food-card-content a:hover {
-    color: var(--color-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
 }
 
 
 /*
 
 
-THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
+    THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 
 
 */
 
 
 .random-cta {
-    padding: 3.5rem 4%;
-
-    text-align: center;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background);
+
+    text-align: center;
 }
 
 .random-cta-content {
@@ -465,59 +425,33 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 .random-cta-content h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 3rem;
     line-height: 1.2;
-
-    color: var(--color-heading);
 }
 
 .random-cta-content h2 span {
     display: block;
+
     color: var(--color-accent);
 }
 
 .random-cta-content p {
     max-width: 600px;
-
     margin: 1.25rem auto 2rem;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
-.random-cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
-    min-height: 44px;
-    padding: 0.9rem 1.5rem;
+/*
 
-    border-radius: 8px;
 
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.5;
-    text-decoration: none;
+    LINK FOCUS STYLES
 
-    color: var(--color-white);
-    background-color: var(--color-primary);
 
-    transition: background-color 0.2s ease;
-}
+*/
 
-.random-cta-button:hover {
-    background-color: var(--color-accent);
-}
-
-.random-intro-button:active,
-.surprise-pick-button:active,
-.random-cta-button:active {
-    transform: translateY(1px);
-}
 
 .random-breadcrumb a:focus-visible,
 .random-intro-button:focus-visible,
@@ -527,29 +461,22 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 .random-food-card-content a:focus-visible,
 .random-cta-button:focus-visible {
     outline: 2px solid var(--color-primary);
-    outline-offset: 3px;
 }
 
 
-/* ---------- Respect "reduce motion" settings ---------- */
-@media (prefers-reduced-motion: reduce) {
+/*
 
-    .random-food-card,
-    .random-food-card-image img {
-        transition: none;
-    }
 
-    .random-food-card:hover,
-    .random-food-card:hover .random-food-card-image img {
-        transform: none;
-    }
-}
+    MEDIA QUERIES
+
+
+*/
 
 
 /* ---------- Tablets (up to 1024px) ---------- */
+
 @media (max-width: 1024px) {
 
-    .surprise-pick-result,
     .surprise-pick-fallback {
         gap: 2.5rem;
     }
@@ -561,12 +488,12 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 
 
 /* ---------- Small tablets (up to 900px) ---------- */
+
 @media (max-width: 900px) {
 
-    .surprise-pick-result,
     .surprise-pick-fallback {
-        grid-template-columns: 1fr;
         gap: 2rem;
+        grid-template-columns: 1fr;
     }
 
     .surprise-pick-image {
@@ -582,21 +509,21 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
     }
 
     /* Food cards: one row you swipe sideways. The next card peeks in
-       from the edge so people can see there is more. */
+       from the edge so people can see there is more. The padding leaves
+       room so card hover effects are not clipped. */
+
     .random-discoveries-grid {
         grid-template-columns: none;
         grid-auto-flow: column;
         grid-auto-columns: 44%;
-
-        /* a little room so card hover effects are not clipped */
-        padding: 0.5rem 0 1.25rem;
-
         overflow-x: auto;
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
         scrollbar-color: var(--color-accent) transparent;
         -webkit-overflow-scrolling: touch;
+
+        padding: 0.5rem 0 1.25rem;
     }
 
     .random-discoveries-grid > * {
@@ -606,24 +533,27 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 
 
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
-    /* Section spacing: the first section after the intro keeps a little
-       extra room, the rest are tighter (same as the other pages) */
+    /* Section spacing: the featured dish section keeps a little extra
+       room, the rest are tighter */
+
     .random-intro {
-        padding: 2.75rem 4% 3rem;
+        padding-block: 2.75rem 3rem;
     }
 
     .surprise-pick {
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .random-discoveries,
     .random-cta {
-        padding: 2.5rem 4%;
+        padding-block: 2.5rem;
     }
 
-    /* Headings were fixed sizes, so make them fluid */
+    /* Fluid heading sizes on smaller screens */
+
     .random-discoveries-header h2 {
         font-size: clamp(1.9rem, 5.5vw, 2.7rem);
     }
@@ -633,6 +563,7 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
     }
 
     /* Discoveries header: title block on top, "View All Foods" link below */
+
     .random-discoveries-header {
         flex-direction: column;
         align-items: flex-start;
@@ -646,10 +577,12 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 
 
 /* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
 
     /* Swipe row: wider cards so about one shows at a time, with a peek
        of the next */
+
     .random-discoveries-grid {
         grid-auto-columns: 80%;
     }
@@ -661,28 +594,32 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+
     .random-intro,
     .surprise-pick,
     .random-discoveries,
     .random-cta {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        --gutter-x: 1.25rem;
     }
 
     /* Intro */
+
     .random-intro {
         padding-top: 2.5rem;
     }
 
     .random-breadcrumb {
         flex-wrap: wrap;
+
         margin-bottom: 1.5rem;
     }
 
-    /* Today's pick */
+    /* Featured dish */
+
     .surprise-pick-image {
         height: 240px;
     }
@@ -693,6 +630,7 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
     }
 
     /* Food cards */
+
     .random-discoveries-header {
         margin-bottom: 1.5rem;
     }
@@ -708,9 +646,26 @@ THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .random-intro-content h1 {
         font-size: 2.25rem;
+    }
+}
+
+
+/* ---------- Respect "reduce motion" settings ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .random-food-card,
+    .random-food-card-image img {
+        transition: none;
+    }
+
+    .random-food-card:hover,
+    .random-food-card:hover .random-food-card-image img {
+        transform: none;
     }
 }

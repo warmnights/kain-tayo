@@ -3,23 +3,25 @@
 /*
 
 
-ACCOUNT ACCESS
+    ACCOUNT ACCESS
 
 
 */
 
 
 .login-section {
-    padding: 5rem 8%;
+    --gutter-x: 8%;
+
+    padding-block: 5rem;
 
     background-color: var(--color-background-secondary);
 }
 
 .login-container {
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
     align-items: center;
     gap: 5rem;
+    grid-template-columns: 1fr 0.9fr;
 
     max-width: 1250px;
     margin: 0 auto;
@@ -36,8 +38,9 @@ ACCOUNT ACCESS
 
     margin-bottom: 2.5rem;
 
+    color: var(--color-text-muted);
+
     font-size: 0.8rem;
-    color: #80695B;
 }
 
 .login-breadcrumb a {
@@ -46,18 +49,14 @@ ACCOUNT ACCESS
 
 .login-breadcrumb span:last-child {
     color: var(--color-heading);
+
     font-weight: 600;
 }
 
 .login-content h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 7vw, 3.8rem);
-    font-weight: 700;
-    line-height: 1.1;
-
-    color: var(--color-heading);
 }
 
 .login-content h1 span {
@@ -66,27 +65,22 @@ ACCOUNT ACCESS
 
 .login-description {
     max-width: 450px;
-
     margin: 1.25rem 0;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .auth-availability {
     margin: 0 0 1.5rem;
     padding: 1rem 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
 
-    border: 1px solid rgba(100, 30, 22, 0.2);
-    border-radius: 8px;
+    background-color: var(--color-background);
 
     font-size: 0.9rem;
     line-height: 1.65;
-
-    color: var(--color-text);
-    background-color: var(--color-background);
 }
 
 .auth-browse-link {
@@ -95,16 +89,14 @@ ACCOUNT ACCESS
     width: 100%;
     margin-bottom: 1.75rem;
     padding: 1rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
-    text-align: center;
-    text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
+    text-align: center;
 
     transition: background-color 0.2s ease;
 }
@@ -123,15 +115,11 @@ ACCOUNT ACCESS
 /*
 
 
-LOGIN FORM
+    LOGIN FORM
 
 
 */
 
-
-.login-form {
-    width: 100%;
-}
 
 .form-group {
     display: flex;
@@ -142,52 +130,59 @@ LOGIN FORM
 }
 
 .form-group label {
+    color: var(--color-heading);
+
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-heading);
 }
+
+/*
+
+    1rem stops iPhones from zooming the page when a field is tapped
+
+*/
 
 .form-group input {
     width: 100%;
-
     padding: 1rem 1.1rem;
-
-    border: 1px solid rgba(100, 30, 22, 0.18);
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     outline: none;
-
-    /* 1rem stops iPhones from zooming the page when a field is tapped */
-    font-family: inherit;
-    font-size: 1rem;
 
     color: var(--color-text);
     background-color: var(--color-background);
+
+    font-size: 1rem;
 
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.auth-disabled .form-group input:disabled {
-    color: var(--color-text);
-    background-color: var(--color-background);
-    cursor: not-allowed;
-    opacity: 1;
-}
-
 .form-group input:focus {
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(184, 92, 56, 0.2);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+/*
+
+    Opacity stays at 1 so disabled fields aren't dimmed by the browser's default styles
+
+*/
+
+.auth-disabled .form-group input:disabled {
+    opacity: 1;
+
+    cursor: not-allowed;
 }
 
 .form-group input::placeholder {
-    color: #80695B;
+    color: var(--color-text-muted);
 }
 
 .login-options {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 0.75rem 1rem;
 
     margin: 0.5rem 0 2rem;
@@ -199,8 +194,6 @@ LOGIN FORM
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
-    color: var(--color-text);
 
     cursor: pointer;
 }
@@ -215,9 +208,9 @@ LOGIN FORM
 }
 
 .forgot-password {
-    font-weight: 600;
-
     color: var(--color-accent);
+
+    font-weight: 600;
 }
 
 .forgot-password:hover {
@@ -228,18 +221,15 @@ LOGIN FORM
     display: block;
 
     width: 100%;
-
     padding: 1rem;
-
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
 
-    font-family: inherit;
+    color: var(--color-background);
+    background-color: var(--color-primary);
+
     font-size: 0.95rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -251,20 +241,20 @@ LOGIN FORM
 
 .login-button:disabled,
 .social-button:disabled {
-    border: 1px solid rgba(100, 30, 22, 0.18);
+    border: 1px solid var(--color-border);
 
     color: var(--color-text);
     background-color: var(--color-background);
+    opacity: 1;
 
     cursor: not-allowed;
-    opacity: 1;
 }
 
 
 /*
 
 
-SOCIAL ACCOUNT OPTIONS
+    SOCIAL SIGN-IN AND SIGN-UP LINK
 
 
 */
@@ -277,9 +267,9 @@ SOCIAL ACCOUNT OPTIONS
 
     margin: 1.75rem 0 1.25rem;
 
-    font-size: 0.8rem;
+    color: var(--color-text-muted);
 
-    color: #80695B;
+    font-size: 0.8rem;
 }
 
 .login-divider::before,
@@ -287,34 +277,33 @@ SOCIAL ACCOUNT OPTIONS
     content: "";
 
     flex: 1;
+
     height: 1px;
 
-    background-color: rgba(100, 30, 22, 0.15);
+    background-color: var(--color-border);
 }
 
 .social-login {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
+    grid-template-columns: 1fr 1fr;
 }
 
 .social-button {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.65rem;
 
     padding: 0.9rem 1rem;
-
-    border: 1px solid rgba(100, 30, 22, 0.18);
-    border-radius: 8px;
-
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
 
     color: var(--color-heading);
     background-color: var(--color-background);
+
+    font-size: 0.9rem;
+    font-weight: 600;
 
     cursor: pointer;
     transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -322,7 +311,7 @@ SOCIAL ACCOUNT OPTIONS
 
 .social-button:hover:not(:disabled) {
     border-color: var(--color-accent);
-    background-color: var(--color-white);
+    background-color: var(--color-surface);
 }
 
 .social-button:focus-visible {
@@ -340,18 +329,16 @@ SOCIAL ACCOUNT OPTIONS
 .signup-text {
     margin-top: 1.75rem;
 
-    text-align: center;
-
     font-size: 0.9rem;
-    color: var(--color-text);
+    text-align: center;
 }
 
 .signup-text a {
     margin-left: 0.25rem;
 
-    font-weight: 600;
-
     color: var(--color-accent);
+
+    font-weight: 600;
 }
 
 .signup-text a:hover {
@@ -362,7 +349,7 @@ SOCIAL ACCOUNT OPTIONS
 /*
 
 
-EVERY FLAVOR HAS A STORY.
+    PHOTO PANEL
 
 
 */
@@ -371,15 +358,13 @@ EVERY FLAVOR HAS A STORY.
 .login-image {
     position: relative;
 
-    height: 570px;
     overflow: hidden;
 
+    height: 570px;
     border-radius: 14px;
 }
 
 .login-image img {
-    display: block;
-
     width: 100%;
     height: 100%;
 
@@ -394,24 +379,24 @@ EVERY FLAVOR HAS A STORY.
 
     background: linear-gradient(
         to top,
-        rgba(45, 20, 13, 0.88),
-        rgba(45, 20, 13, 0.05) 75%
+        color-mix(in srgb, var(--color-background) 88%, transparent),
+        color-mix(in srgb, var(--color-background) 5%, transparent) 75%
     );
 }
 
 .login-image-overlay {
     position: absolute;
-    z-index: 1;
-
     right: 2.5rem;
     bottom: 2.5rem;
     left: 2.5rem;
+    z-index: 1;
 
     color: var(--color-white);
 }
 
 .login-image-overlay span {
     display: block;
+
     margin-bottom: 1rem;
 
     font-size: 0.75rem;
@@ -422,30 +407,40 @@ EVERY FLAVOR HAS A STORY.
 .login-image-overlay h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
+    color: var(--color-white);
+
     font-size: 2.7rem;
     line-height: 1.15;
-
-    color: var(--color-white);
 }
 
 .login-image-overlay p {
     max-width: 400px;
-
     margin: 1rem 0 0;
+
+    color: color-mix(in srgb, var(--color-white) 90%, transparent);
 
     font-size: 0.9rem;
     line-height: 1.8;
-
-    color: rgba(255, 255, 255, 0.9);
 }
 
 
+/*
+
+
+    MEDIA QUERIES
+
+
+*/
+
+
 /* ---------- Tablets (up to 1024px) ---------- */
+
 @media (max-width: 1024px) {
 
     .login-section {
-        padding: 4rem 6%;
+        --gutter-x: 6%;
+
+        padding-block: 4rem;
     }
 
     .login-container {
@@ -465,13 +460,15 @@ EVERY FLAVOR HAS A STORY.
 
 
 /* ---------- Small tablets (up to 900px) ---------- */
+
 @media (max-width: 900px) {
 
     /* Form on top, photo below. Both sit in one centered column so the
        form doesn't stretch across the whole screen. */
+
     .login-container {
-        grid-template-columns: 1fr;
         gap: 2.5rem;
+        grid-template-columns: 1fr;
     }
 
     .login-content,
@@ -488,10 +485,13 @@ EVERY FLAVOR HAS A STORY.
 
 
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
     .login-section {
-        padding: 3.5rem 5%;
+        --gutter-x: 5%;
+
+        padding-block: 3.5rem;
     }
 
     .login-image-overlay {
@@ -507,10 +507,12 @@ EVERY FLAVOR HAS A STORY.
 
 
 /* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
 
     /* The photo is decoration, so on phones the page stays focused on
        the form. Delete this block to show the photo under the form. */
+
     .login-image {
         display: none;
     }
@@ -518,20 +520,22 @@ EVERY FLAVOR HAS A STORY.
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
-    /* Slightly larger side gutters than 5% so text doesn't hug the edge */
+    /* Fixed 1.25rem side gutter instead of a percentage, so text
+       doesn't hug the edge on the smallest screens */
+
     .login-section {
-        padding: 2.5rem 1.25rem 3rem;
+        --gutter-x: 1.25rem;
+
+        padding-block: 2.5rem 3rem;
     }
 
     .login-breadcrumb {
         flex-wrap: wrap;
-        margin-bottom: 1.75rem;
-    }
 
-    .login-description {
-        margin-bottom: 1.25rem;
+        margin-bottom: 1.75rem;
     }
 
     .social-button {
@@ -541,6 +545,7 @@ EVERY FLAVOR HAS A STORY.
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .login-content h1 {
@@ -548,6 +553,7 @@ EVERY FLAVOR HAS A STORY.
     }
 
     /* The two buttons no longer fit side by side */
+
     .social-login {
         grid-template-columns: 1fr;
     }

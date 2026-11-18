@@ -3,17 +3,20 @@
 /*
 
 
-EXPLORE THE PHILIPPINES, ONE BITE AT A TIME.
+    EXPLORE THE PHILIPPINES, ONE BITE AT A TIME.
 
 
 */
 
 
 .map-intro {
-    padding: 5rem 8%;
-    text-align: center;
+    --gutter-x: 8%;
+
+    padding-block: 5rem;
 
     background-color: var(--color-background-secondary);
+
+    text-align: center;
 }
 
 .map-intro-content {
@@ -23,14 +26,13 @@ EXPLORE THE PHILIPPINES, ONE BITE AT A TIME.
 
 .map-breadcrumb {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.65rem;
 
     margin-bottom: 2.5rem;
 
     font-size: 0.8rem;
-    color: var(--color-text);
 }
 
 .map-breadcrumb a {
@@ -39,22 +41,20 @@ EXPLORE THE PHILIPPINES, ONE BITE AT A TIME.
 
 .map-breadcrumb span:last-child {
     color: var(--color-heading);
+
     font-weight: 600;
 }
 
 .map-intro h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.25rem, 7vw, 3.5rem);
-    font-weight: 700;
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .map-intro h1 span {
     display: block;
+
     color: var(--color-accent);
 }
 
@@ -62,54 +62,55 @@ EXPLORE THE PHILIPPINES, ONE BITE AT A TIME.
     max-width: 650px;
     margin: 1.5rem auto 0;
 
-    font-size: 1rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 
 /*
 
 
-THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
+    THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
 
 
 */
 
 
-/* First section after the intro: extra breathing room */
+/*
+
+    First section after the intro: extra breathing room
+
+*/
+
 .philippines-map-section {
-    padding: 5rem 4%;
+    padding-block: 5rem;
+
     background-color: var(--color-background);
 }
 
 .philippines-map-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "map-image map-content";
     align-items: center;
     gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "map-image map-content";
 
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .philippines-map-image {
-    grid-area: map-image;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-area: map-image;
 
     padding: 2rem;
+    border-radius: var(--radius-md);
 
     background-color: var(--color-background-secondary);
-    border-radius: 12px;
 }
 
 .philippines-map-image img {
-    display: block;
     width: 100%;
     max-width: 430px;
     max-height: 600px;
@@ -126,11 +127,8 @@ THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
 .philippines-map-content h2 {
     margin: 0.8rem 0 1.2rem;
 
-    font-family: var(--font-heading);
     font-size: 2.7rem;
     line-height: 1.2;
-
-    color: var(--color-heading);
 }
 
 .philippines-map-content h2 span {
@@ -142,38 +140,26 @@ THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .map-island-list {
     margin: 0 0 2rem;
-    padding: 0;
-    list-style: none;
 }
 
 .map-island-list-heading {
-    margin: 0 0 0.5rem;
-
-    font-family: var(--font-heading);
     font-size: 1.15rem;
-    color: var(--color-heading);
 }
 
 .map-island-item {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
 
     min-height: 56px;
     padding: 0.65rem 0.75rem;
-
-    border-bottom: 1px solid #E5D5C3;
-
-    color: var(--color-text);
-    border-radius: 8px;
-    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
 
     transition: background-color 0.2s ease;
 }
@@ -182,35 +168,29 @@ THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
     background-color: var(--color-background-secondary);
 }
 
-.map-breadcrumb a:focus-visible,
-.map-island-item:focus-visible,
-.map-explore-button:focus-visible,
-.map-cta-button:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 3px;
-}
-
 .map-island-item:active {
     background-color: var(--color-background-secondary);
 }
 
 .map-island-item-name {
+    color: var(--color-heading);
+
     font-family: var(--font-heading);
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--color-heading);
 }
 
 .map-island-item-region {
     margin-left: auto;
+
     font-size: 0.85rem;
-    color: var(--color-text);
 }
 
 .map-island-item svg {
+    flex-shrink: 0;
+
     width: 1.15rem;
     height: 1.15rem;
-    flex-shrink: 0;
 
     fill: none;
     stroke: var(--color-primary);
@@ -224,11 +204,10 @@ THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
 
     min-height: 44px;
     padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
-
+    color: var(--color-background);
     background-color: var(--color-primary);
-    color: var(--color-white);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -248,18 +227,18 @@ THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
 /*
 
 
-EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
+    EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
 
 
 */
 
 
 .map-cta {
-    padding: 3.5rem 4%;
-
-    text-align: center;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background);
+
+    text-align: center;
 }
 
 .map-cta-content {
@@ -270,11 +249,8 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
 .map-cta-content h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 3rem;
     line-height: 1.2;
-
-    color: var(--color-heading);
 }
 
 .map-cta-content h2 span {
@@ -283,29 +259,25 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
 
 .map-cta-content p {
     max-width: 600px;
-
     margin: 1.25rem auto 2rem;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .map-cta-button {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 
     transition: background-color 0.2s ease;
 }
@@ -319,11 +291,40 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
 }
 
 
+/*
+
+
+    LINK FOCUS STYLES
+
+
+*/
+
+
+.map-breadcrumb a:focus-visible,
+.map-island-item:focus-visible,
+.map-explore-button:focus-visible,
+.map-cta-button:focus-visible {
+    outline: 2px solid var(--color-primary);
+}
+
+
+/*
+
+
+    MEDIA QUERIES
+
+
+*/
+
+
 /* ---------- Tablets (up to 1024px) ---------- */
+
 @media (max-width: 1024px) {
 
     .map-intro {
-        padding: 4rem 6%;
+        --gutter-x: 6%;
+
+        padding-block: 4rem;
     }
 
     .philippines-map-container {
@@ -333,15 +334,17 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
 
 
 /* ---------- Small tablets (up to 900px) ---------- */
+
 @media (max-width: 900px) {
 
     /* Put the regional links before the illustration on smaller screens. */
+
     .philippines-map-container {
+        gap: 2rem;
         grid-template-columns: 1fr;
         grid-template-areas:
             "map-content"
             "map-image";
-        gap: 2rem;
     }
 
     .philippines-map-image img {
@@ -355,25 +358,28 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
     .philippines-map-content > p {
         max-width: 640px;
     }
-
 }
 
 
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
-    /* Section spacing: the first section after the intro keeps a little
-       extra room, the rest are tighter (same as the other pages) */
+    /* Section spacing: the map section keeps a little extra room, the
+       call-to-action is tighter */
+
     .map-intro {
-        padding: 3.5rem 5%;
+        --gutter-x: 5%;
+
+        padding-block: 3.5rem;
     }
 
     .philippines-map-section {
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .map-cta {
-        padding: 2.5rem 4%;
+        padding-block: 2.5rem;
     }
 
     .philippines-map-content h2 {
@@ -383,11 +389,11 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
     .map-cta-content h2 {
         font-size: clamp(2rem, 7vw, 3rem);
     }
-
 }
 
 
 /* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
 
     .philippines-map-image img {
@@ -397,28 +403,31 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
-    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+    /* Fixed 1.25rem side gutters so text doesn't hug the edge */
+
     .map-intro,
     .philippines-map-section,
     .map-cta {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        --gutter-x: 1.25rem;
     }
 
     /* Intro */
+
     .map-intro {
-        padding-top: 2.5rem;
-        padding-bottom: 3rem;
+        padding-block: 2.5rem 3rem;
     }
 
     .map-breadcrumb {
         flex-wrap: wrap;
+
         margin-bottom: 1.75rem;
     }
 
     /* Map panel */
+
     .philippines-map-image {
         padding: 1.25rem;
     }
@@ -426,11 +435,11 @@ EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
     .philippines-map-image img {
         max-height: 340px;
     }
-
 }
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .map-intro h1 {

@@ -3,20 +3,22 @@
 /*
 
 
-THE FLAVORS WE CALL HOME
+    THE FLAVORS WE CALL HOME
 
 
 */
 
 
 .top-foods-intro {
+    --gutter-x: 8%;
+
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
     align-items: center;
     gap: 4rem;
+    grid-template-columns: 1fr 0.9fr;
 
     min-height: 580px;
-    padding: 5rem 8%;
+    padding-block: 5rem;
 
     background-color: var(--color-background-secondary);
 }
@@ -33,7 +35,6 @@ THE FLAVORS WE CALL HOME
     margin-bottom: 2.5rem;
 
     font-size: 0.8rem;
-    color: var(--color-text);
 }
 
 .top-foods-breadcrumb a {
@@ -47,18 +48,15 @@ THE FLAVORS WE CALL HOME
 
 .top-foods-breadcrumb span:last-child {
     color: var(--color-heading);
+
     font-weight: 600;
 }
 
 .top-foods-intro h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 7vw, 5rem);
-    font-weight: 700;
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .top-foods-intro h1 span {
@@ -67,41 +65,33 @@ THE FLAVORS WE CALL HOME
 
 .top-foods-intro-content > p {
     max-width: 520px;
-
     margin: 1.5rem 0 2rem;
 
-    font-size: 1rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .top-foods-intro-button {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
     padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 }
 
 .top-foods-intro-button:hover {
-    color: var(--color-primary);
     background-color: var(--color-secondary);
 }
 
 .top-foods-intro-image {
-    height: 420px;
     overflow: hidden;
 
-    border-radius: 16px;
+    height: 420px;
+    border-radius: var(--radius-lg);
 }
 
 .top-foods-intro-image img {
@@ -115,14 +105,14 @@ THE FLAVORS WE CALL HOME
 /*
 
 
-A FILIPINO CLASSIC
+    ONE DISH, ENDLESS MEMORIES
 
 
 */
 
 
 .featured-food {
-    padding: 5rem 4%;
+    padding-block: 5rem;
 
     background-color: var(--color-background);
 }
@@ -134,34 +124,30 @@ A FILIPINO CLASSIC
 
 .featured-food-heading {
     margin-bottom: 2.5rem;
+
     text-align: center;
 }
 
 .featured-food-heading h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 2.5rem;
-
-    color: var(--color-heading);
 }
 
 .featured-food-heading p {
     margin: 0.75rem 0 0;
 
     font-size: 0.95rem;
-    color: var(--color-text);
 }
 
 .featured-food-card {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-
     overflow: hidden;
 
-    background-color: var(--color-background-secondary);
+    border-radius: var(--radius-lg);
 
-    border-radius: 16px;
+    background-color: var(--color-background-secondary);
 }
 
 .featured-food-image {
@@ -186,10 +172,7 @@ A FILIPINO CLASSIC
 .featured-food-info h3 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 2.7rem;
-
-    color: var(--color-heading);
 }
 
 .featured-food-info > p {
@@ -197,8 +180,6 @@ A FILIPINO CLASSIC
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .featured-food-tags {
@@ -211,22 +192,21 @@ A FILIPINO CLASSIC
 
 .featured-food-tags span {
     padding: 0.4rem 0.8rem;
-
-    border-radius: 30px;
-
-    font-size: 0.75rem;
+    border-radius: var(--radius-pill);
 
     color: var(--color-heading);
     background-color: var(--color-background);
+
+    font-size: 0.75rem;
 }
 
 .featured-food-link {
     align-self: flex-start;
 
+    color: var(--color-primary);
+
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-primary);
 }
 
 .featured-food-link:hover {
@@ -238,27 +218,22 @@ A FILIPINO CLASSIC
 /*
 
 
-FILIPINO FAVORITES
+    FILIPINO FAVORITES
 
 
 */
 
 
 .filipino-favorites {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
 }
 
-.filipino-favorites-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 .filipino-favorites-header {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
+    align-items: flex-end;
     gap: 2rem;
 
     margin-bottom: 2.5rem;
@@ -267,32 +242,26 @@ FILIPINO FAVORITES
 .filipino-favorites-header h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 2.7rem;
-
-    color: var(--color-heading);
 }
 
 .filipino-favorites-header p {
     max-width: 550px;
-
     margin: 0.75rem 0 0;
 
     font-size: 0.95rem;
-    color: var(--color-text);
 }
 
 .collection-note {
     padding: 0.55rem 1rem;
-
     border: 1px solid var(--color-primary);
-    border-radius: 30px;
+    border-radius: var(--radius-pill);
+
+    color: var(--color-primary);
 
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
-
-    color: var(--color-primary);
     white-space: nowrap;
 }
 
@@ -302,27 +271,24 @@ FILIPINO FAVORITES
 
 .filipino-food-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
 }
-
 
 .filipino-food-card {
     overflow: hidden;
 
-    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
 
-    border: 1px solid rgba(100, 30, 22, 0.07);
-    border-radius: 12px;
+    background-color: var(--color-background);
 }
 
 .filipino-food-image {
-    position: relative;
-
     display: block;
+    overflow: hidden;
 
     height: 250px;
-    overflow: hidden;
 }
 
 .filipino-food-image img {
@@ -337,31 +303,25 @@ FILIPINO FAVORITES
 }
 
 .filipino-food-category {
+    color: var(--color-primary);
+
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-
-    color: var(--color-primary);
 }
 
 .filipino-food-info h3 {
     margin: 0.5rem 0;
 
-    font-family: var(--font-heading);
     font-size: 1.7rem;
-
-    color: var(--color-heading);
 }
 
 .filipino-food-info p {
     min-height: 75px;
-
     margin: 0 0 1.25rem;
 
     font-size: 0.85rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .food-source {
@@ -370,15 +330,16 @@ FILIPINO FAVORITES
 
 .food-source-link {
     color: var(--color-primary);
+
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .filipino-food-info > a {
+    color: var(--color-primary);
+
     font-size: 0.85rem;
     font-weight: 600;
-
-    color: var(--color-primary);
 }
 
 .filipino-food-info > a:hover {
@@ -390,18 +351,18 @@ FILIPINO FAVORITES
 /*
 
 
-YOUR NEXT FAVORITE DISH IS WAITING.
+    YOUR NEXT FAVORITE DISH IS WAITING
 
 
 */
 
 
 .top-foods-cta {
-    padding: 3.5rem 4%;
-
-    text-align: center;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background);
+
+    text-align: center;
 }
 
 .top-foods-cta-container {
@@ -412,61 +373,87 @@ YOUR NEXT FAVORITE DISH IS WAITING.
 .top-foods-cta h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 3.2rem;
     line-height: 1.2;
-
-    color: var(--color-heading);
 }
 
 .top-foods-cta p {
     max-width: 600px;
-
     margin: 1.25rem auto 2rem;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .top-foods-cta-button {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
     padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 }
 
 .top-foods-cta-button:hover {
-    color: var(--color-primary);
     background-color: var(--color-secondary);
 }
 
 
-/* ---------- Anchor jump fix (all screen sizes) ----------
-   The "Explore the Collection" button jumps to #filipino-favorites, but the
-   sticky navbar was covering the top of that section after the jump.
-   scroll-margin-top leaves room for the navbar. */
-.filipino-favorites {
-    scroll-margin-top: 5.5rem;
+/*
+
+
+    FOCUS STYLES
+
+
+*/
+
+
+.top-foods-breadcrumb a:focus-visible,
+.top-foods-intro-button:focus-visible,
+.featured-food-link:focus-visible,
+.filipino-food-info > a:focus-visible,
+.food-source-link:focus-visible,
+.top-foods-cta-button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/*
+
+    The photo link sits flush against the card edge and the card has
+    overflow: hidden, so an outside outline would be cut off. Draw it inside.
+
+*/
+
+.filipino-food-image:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -4px;
 }
 
 
+/*
+
+
+    MEDIA QUERIES
+
+
+*/
+
+
 /* ---------- Tablets (up to 1024px) ---------- */
+
 @media (max-width: 1024px) {
 
     .top-foods-intro {
+        --gutter-x: 6%;
+
         gap: 2.5rem;
-        padding: 4rem 6%;
+
+        padding-block: 4rem;
     }
 
     .filipino-food-grid {
@@ -480,15 +467,18 @@ YOUR NEXT FAVORITE DISH IS WAITING.
 
 
 /* ---------- Small tablets (up to 900px) ---------- */
+
 @media (max-width: 900px) {
 
     /* Intro: text on top, image below */
+
     .top-foods-intro {
+        --gutter-x: 5%;
+
         grid-template-columns: 1fr;
-        gap: 2.5rem;
 
         min-height: 0;
-        padding: 3.5rem 5%;
+        padding-block: 3.5rem;
     }
 
     .top-foods-intro-image {
@@ -496,6 +486,7 @@ YOUR NEXT FAVORITE DISH IS WAITING.
     }
 
     /* Featured dish card: image on top, text below */
+
     .featured-food-card {
         grid-template-columns: 1fr;
     }
@@ -515,20 +506,21 @@ YOUR NEXT FAVORITE DISH IS WAITING.
 
     /* Favorites: one row of cards you swipe sideways. The next card
        peeks in from the edge so people can see there is more. */
+
     .filipino-food-grid {
         grid-template-columns: none;
         grid-auto-flow: column;
         grid-auto-columns: 44%;
-
-        /* a little room so card hover effects are not clipped */
-        padding: 0.5rem 0 1.25rem;
-
         overflow-x: auto;
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
         scrollbar-color: var(--color-accent) transparent;
         -webkit-overflow-scrolling: touch;
+
+        /* a little room so the cards' edges are not clipped by the scroll area */
+
+        padding: 0.5rem 0 1.25rem;
     }
 
     .filipino-food-grid > * {
@@ -538,31 +530,32 @@ YOUR NEXT FAVORITE DISH IS WAITING.
     .filipino-favorites-header .filipino-favorites-scroll-hint {
         display: block;
 
-        margin: 0.75rem 0 0;
+        color: var(--color-primary);
 
         font-size: 0.8rem;
         font-weight: 600;
         line-height: 1.5;
-
-        color: var(--color-primary);
     }
 }
 
 
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
     /* Section spacing */
+
     .featured-food {
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .filipino-favorites,
     .top-foods-cta {
-        padding: 2.5rem 4%;
+        padding-block: 2.5rem;
     }
 
     /* Headings were fixed sizes, so make them fluid */
+
     .featured-food-heading h2 {
         font-size: clamp(1.75rem, 5vw, 2.5rem);
     }
@@ -575,7 +568,8 @@ YOUR NEXT FAVORITE DISH IS WAITING.
         font-size: clamp(2rem, 7vw, 3.2rem);
     }
 
-    /* Favorites header: title block on top, "curated collection" tag below */
+    /* Favorites header: title block on top, "editorial selection" tag below */
+
     .filipino-favorites-header {
         flex-direction: column;
         align-items: flex-start;
@@ -585,15 +579,18 @@ YOUR NEXT FAVORITE DISH IS WAITING.
 
 
 /* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
 
     /* Keep the distinct food-spread image visible on phones. */
+
     .top-foods-intro-image {
         height: 220px;
     }
 
     /* Swipe row: wider cards so about one shows at a time, with a peek
        of the next */
+
     .filipino-food-grid {
         grid-auto-columns: 80%;
     }
@@ -601,27 +598,36 @@ YOUR NEXT FAVORITE DISH IS WAITING.
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
-    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+    /* Slightly larger side gutters than the default 4% so text doesn't hug the edge */
+
+    .top-foods-intro,
     .featured-food,
     .filipino-favorites,
     .top-foods-cta {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        --gutter-x: 1.25rem;
     }
 
     /* Intro */
+
     .top-foods-intro {
-        padding: 2.5rem 1.25rem 3rem;
+        padding-block: 2.5rem 3rem;
+    }
+
+    .top-foods-intro-image {
+        height: 200px;
     }
 
     .top-foods-breadcrumb {
         flex-wrap: wrap;
+
         margin-bottom: 1.75rem;
     }
 
     /* Featured dish card */
+
     .featured-food-heading {
         margin-bottom: 1.75rem;
     }
@@ -635,15 +641,12 @@ YOUR NEXT FAVORITE DISH IS WAITING.
     }
 
     /* Favorites */
+
     .filipino-favorites-header {
         margin-bottom: 1.75rem;
     }
 
     .filipino-food-image {
-        height: 200px;
-    }
-
-    .top-foods-intro-image {
         height: 200px;
     }
 
@@ -654,20 +657,10 @@ YOUR NEXT FAVORITE DISH IS WAITING.
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .top-foods-intro h1 {
         font-size: 2.25rem;
     }
-}
-
-.top-foods-intro-button:focus-visible,
-.top-foods-breadcrumb a:focus-visible,
-.featured-food-link:focus-visible,
-.filipino-food-image:focus-visible,
-.filipino-food-info > a:focus-visible,
-.food-source-link:focus-visible,
-.top-foods-cta-button:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 3px;
 }

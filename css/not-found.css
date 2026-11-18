@@ -3,7 +3,7 @@
 /*
 
 
-THIS DISH ISN'T ON THE MENU.
+    THIS DISH ISN'T ON THE MENU.
 
 
 */
@@ -11,15 +11,15 @@ THIS DISH ISN'T ON THE MENU.
 
 .not-found {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     min-height: 60vh;
-    padding: 5rem 4%;
-
-    text-align: center;
+    padding-block: 5rem;
 
     background-color: var(--color-background-secondary);
+
+    text-align: center;
 }
 
 .not-found-content {
@@ -29,28 +29,24 @@ THIS DISH ISN'T ON THE MENU.
 .not-found-code {
     display: block;
 
+    color: var(--color-accent);
+    opacity: 0.25;
+
     font-family: var(--font-heading);
     font-size: clamp(5rem, 22vw, 10rem);
     font-weight: 700;
     line-height: 1;
-
-    color: var(--color-accent);
-    opacity: 0.25;
 }
 
 .not-found .section-eyebrow {
-    display: block;
     margin: 0.5rem 0 1rem;
 }
 
 .not-found h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.25rem, 7vw, 4rem);
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .not-found h1 span {
@@ -59,44 +55,41 @@ THIS DISH ISN'T ON THE MENU.
 
 .not-found-content > p {
     max-width: 520px;
-
     margin: 1.25rem auto 2rem;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .not-found-actions {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 
 .not-found-button {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 0.9rem 1.5rem;
-
     border: 1px solid var(--color-primary);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
+
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .not-found-button:hover {
     border-color: var(--color-accent);
+
     background-color: var(--color-accent);
 }
 
@@ -112,19 +105,19 @@ THIS DISH ISN'T ON THE MENU.
 .not-found-links {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.75rem;
 
     margin-top: 2.5rem;
 }
 
 .not-found-links-label {
+    color: var(--color-text-muted);
+
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 1px;
-
-    color: #80695B;
 }
 
 .not-found-links a {
@@ -133,14 +126,11 @@ THIS DISH ISN'T ON THE MENU.
 
     min-height: 2.5rem;
     padding: 0.5rem 1.1rem;
-
-    border: 1px solid rgba(100, 30, 22, 0.2);
-    border-radius: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
 
     font-size: 0.75rem;
     font-weight: 500;
-
-    color: var(--color-text);
 
     transition: 0.2s ease;
 }
@@ -148,17 +138,27 @@ THIS DISH ISN'T ON THE MENU.
 .not-found-links a:hover {
     border-color: var(--color-primary);
 
-    color: var(--color-white);
+    color: var(--color-background);
     background-color: var(--color-primary);
 }
 
 
+/*
+
+
+    MEDIA QUERIES
+
+
+*/
+
+
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
     .not-found {
         min-height: 0;
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .not-found-links {
@@ -168,14 +168,19 @@ THIS DISH ISN'T ON THE MENU.
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+
     .not-found {
-        padding: 2.5rem 1.25rem 3rem;
+        --gutter-x: 1.25rem;
+
+        padding-block: 2.5rem 3rem;
     }
 
     /* The two buttons stack and fill the width */
+
     .not-found-actions {
         flex-direction: column;
         align-items: stretch;
@@ -184,6 +189,7 @@ THIS DISH ISN'T ON THE MENU.
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .not-found h1 {

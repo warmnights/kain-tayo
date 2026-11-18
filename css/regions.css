@@ -3,20 +3,22 @@
 /*
 
 
-EVERY REGION HAS A STORY TO TASTE.
+    EVERY REGION HAS A STORY TO TASTE.
 
 
 */
 
 
 .regions-intro {
+    --gutter-x: 8%;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
+    grid-template-columns: 1fr 1fr;
 
     min-height: 580px;
-    padding: 5rem 8%;
+    padding-block: 5rem;
 
     background-color: var(--color-background-secondary);
 }
@@ -32,12 +34,9 @@ EVERY REGION HAS A STORY TO TASTE.
 
     margin-bottom: 2.5rem;
 
-    font-size: 0.8rem;
     color: var(--color-primary);
-}
 
-.regions-breadcrumb a {
-    color: var(--color-primary);
+    font-size: 0.8rem;
 }
 
 .regions-breadcrumb a:hover {
@@ -47,13 +46,19 @@ EVERY REGION HAS A STORY TO TASTE.
 
 .regions-breadcrumb span:last-child {
     color: var(--color-heading);
+
     font-weight: 600;
 }
 
 .regions-intro-content .section-eyebrow {
-    display: block;
     margin-bottom: 1.25rem;
 }
+
+/*
+
+    Eyebrows on this page use the primary color; the global default is the accent color
+
+*/
 
 .regions-intro-content .section-eyebrow,
 .island-groups-header .section-eyebrow,
@@ -66,12 +71,8 @@ EVERY REGION HAS A STORY TO TASTE.
 .regions-intro-content h1 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5.5vw, 5.5rem);
-    font-weight: 700;
     line-height: 1.15;
-
-    color: var(--color-heading);
 }
 
 .regions-intro-content h1 span {
@@ -80,29 +81,30 @@ EVERY REGION HAS A STORY TO TASTE.
 
 .regions-intro-content > p {
     max-width: 500px;
-
     margin: 1.5rem 0 2rem;
 
-    font-size: 1rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
+
+/*
+
+    Dark text: white on the gold primary color is only about 1.8:1 contrast
+
+*/
 
 .regions-intro-button {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 
     transition: background-color 0.2s ease;
 }
@@ -114,10 +116,10 @@ EVERY REGION HAS A STORY TO TASTE.
 .regions-intro-image {
     position: relative;
 
-    height: 430px;
     overflow: hidden;
 
-    border-radius: 16px;
+    height: 430px;
+    border-radius: var(--radius-lg);
 }
 
 .regions-intro-image img {
@@ -136,10 +138,9 @@ EVERY REGION HAS A STORY TO TASTE.
     padding: 2rem;
 
     color: var(--color-white);
-
     background: linear-gradient(
         transparent,
-        rgba(56, 37, 28, 0.85)
+        color-mix(in srgb, var(--color-background) 85%, transparent)
     );
 }
 
@@ -160,7 +161,7 @@ EVERY REGION HAS A STORY TO TASTE.
 /*
 
 
-WHERE WILL YOUR FOOD JOURNEY BEGIN
+    WHERE WILL YOUR FOOD JOURNEY BEGIN?
 
 
 */
@@ -170,14 +171,6 @@ WHERE WILL YOUR FOOD JOURNEY BEGIN
     padding: 5rem 4%;
 
     background-color: var(--color-background);
-
-    /* Anchor jump (#island-groups) was landing under the sticky navbar */
-    scroll-margin-top: 5.5rem;
-}
-
-.island-groups-container {
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
 .island-groups-header {
@@ -187,18 +180,10 @@ WHERE WILL YOUR FOOD JOURNEY BEGIN
     text-align: center;
 }
 
-.island-groups-header .section-eyebrow {
-    display: block;
-    margin-bottom: 0.75rem;
-}
-
 .island-groups-header h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 2.7rem;
-
-    color: var(--color-heading);
 }
 
 .island-groups-header p {
@@ -206,8 +191,6 @@ WHERE WILL YOUR FOOD JOURNEY BEGIN
 
     font-size: 0.95rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .scroll-hint {
@@ -215,32 +198,37 @@ WHERE WILL YOUR FOOD JOURNEY BEGIN
 
     margin: 0;
 
+    color: var(--color-primary);
+
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1.5;
-
-    color: var(--color-primary);
 }
 
 .island-groups-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .island-card {
     overflow: hidden;
 
-    background-color: var(--color-background-secondary);
+    border-radius: var(--radius-md);
 
-    border-radius: 12px;
+    background-color: var(--color-background-secondary);
+}
+
+.island-card:hover .island-card-image img {
+    transform: scale(1.05);
 }
 
 .island-card-image {
     position: relative;
 
-    height: 260px;
     overflow: hidden;
+
+    height: 260px;
 }
 
 .island-card-image img {
@@ -252,29 +240,24 @@ WHERE WILL YOUR FOOD JOURNEY BEGIN
     transition: transform 0.4s ease;
 }
 
-.island-card:hover .island-card-image img {
-    transform: scale(1.05);
-}
-
 .island-number {
     position: absolute;
     top: 1rem;
     left: 1rem;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     width: 42px;
     height: 42px;
-
     border-radius: 50%;
-
-    font-family: var(--font-heading);
-    font-weight: 700;
 
     color: var(--color-heading);
     background-color: var(--color-background);
+
+    font-family: var(--font-heading);
+    font-weight: 700;
 }
 
 .island-card-info {
@@ -282,31 +265,25 @@ WHERE WILL YOUR FOOD JOURNEY BEGIN
 }
 
 .island-label {
+    color: var(--color-primary);
+
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 2px;
-
-    color: var(--color-primary);
 }
 
 .island-card-info h3 {
     margin: 0.6rem 0;
 
-    font-family: var(--font-heading);
     font-size: 2rem;
-
-    color: var(--color-heading);
 }
 
 .island-card-info p {
     min-height: 75px;
-
     margin: 0 0 1.5rem;
 
     font-size: 0.85rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .island-card-info > a {
@@ -314,41 +291,41 @@ WHERE WILL YOUR FOOD JOURNEY BEGIN
     align-items: center;
     gap: 0.5rem;
 
+    color: var(--color-primary);
+
     font-size: 0.85rem;
     font-weight: 600;
-
-    color: var(--color-primary);
-}
-
-.island-card-info > a span {
-    transition: transform 0.2s ease;
 }
 
 .island-card-info > a:hover span {
     transform: translateX(4px);
 }
 
+.island-card-info > a span {
+    transition: transform 0.2s ease;
+}
+
 
 /*
 
 
-REGION SPOTLIGHT
+    A TASTE OF BICOL.
 
 
 */
 
 
 .featured-region {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
 }
 
 .featured-region-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
+    grid-template-columns: 1fr 1fr;
 
     max-width: 1200px;
     margin: 0 auto;
@@ -357,10 +334,10 @@ REGION SPOTLIGHT
 .featured-region-image {
     position: relative;
 
-    height: 450px;
     overflow: hidden;
 
-    border-radius: 16px;
+    height: 450px;
+    border-radius: var(--radius-lg);
 }
 
 .featured-region-image img {
@@ -370,35 +347,36 @@ REGION SPOTLIGHT
     object-fit: cover;
 }
 
+/*
+
+    Dark text: the heading gold on this tan background is only about 1.6:1 contrast
+
+*/
+
 .featured-region-tag {
     position: absolute;
     bottom: 1.25rem;
     left: 1.25rem;
 
     padding: 0.65rem 1rem;
-
     border-radius: 20px;
+
+    color: var(--color-background);
+    background-color: var(--color-secondary);
 
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 2px;
-
-    color: var(--color-heading);
-    background-color: var(--color-secondary);
 }
 
 .featured-region-content .section-eyebrow {
-    display: block;
     margin-bottom: 1rem;
 }
 
 .featured-region-content h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 3.5rem;
-
-    color: var(--color-heading);
 }
 
 .featured-region-content h2 span {
@@ -410,8 +388,6 @@ REGION SPOTLIGHT
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .featured-region-highlights {
@@ -430,20 +406,19 @@ REGION SPOTLIGHT
 
 .highlight-number {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-shrink: 0;
 
     width: 35px;
     height: 35px;
-
     border-radius: 50%;
-
-    font-size: 0.7rem;
-    font-weight: 700;
 
     color: var(--color-heading);
     background-color: var(--color-background);
+
+    font-size: 0.7rem;
+    font-weight: 700;
 }
 
 .featured-region-highlights p {
@@ -451,21 +426,18 @@ REGION SPOTLIGHT
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-text);
 }
 
 .featured-region-link {
     display: inline-block;
 
+    color: var(--color-primary);
+
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-primary);
 }
 
 .featured-region-link:hover {
-    color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
@@ -474,7 +446,7 @@ REGION SPOTLIGHT
 /*
 
 
-REGIONAL FAVORITES
+    REGIONAL FAVORITES
 
 
 */
@@ -484,69 +456,43 @@ REGIONAL FAVORITES
     padding: 3.5rem 4%;
 
     background-color: var(--color-background);
-
-    /* Anchor jumps (#regional-favorites) were landing under the sticky navbar */
-    scroll-margin-top: 5.5rem;
-}
-
-.regional-favorites-container {
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
 .regional-favorites-header {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
+    align-items: flex-end;
     gap: 2rem;
 
     margin-bottom: 2.5rem;
 }
 
-.regional-favorites-header .section-eyebrow {
-    display: block;
-    margin-bottom: 0.75rem;
-}
-
 .regional-favorites-header h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 2.7rem;
-
-    color: var(--color-heading);
 }
 
 .regional-favorites-header p {
     max-width: 600px;
-
     margin: 0.75rem 0 0;
 
     font-size: 0.95rem;
     line-height: 1.8;
-
-    color: var(--color-text);
 }
 
 .regional-view-all {
     flex-shrink: 0;
 
+    color: var(--color-primary);
+
     font-size: 0.85rem;
     font-weight: 600;
-
-    color: var(--color-primary);
 }
 
 .regional-view-all:hover {
-    color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 0.2em;
-}
-
-.regional-food-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
 }
 
 .regional-food-groups {
@@ -554,34 +500,33 @@ REGIONAL FAVORITES
     gap: 3rem;
 }
 
-.regional-food-group,
-.regional-food-card {
-    scroll-margin-top: 6rem;
-}
-
 .regional-food-group > h3 {
     margin: 0 0 1.25rem;
 
-    font-family: var(--font-heading);
     font-size: clamp(1.5rem, 3vw, 1.9rem);
+}
 
-    color: var(--color-heading);
+.regional-food-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .regional-food-card {
     overflow: hidden;
 
-    background-color: var(--color-background-secondary);
+    border: 1px solid color-mix(in srgb, var(--color-background-secondary) 7%, transparent);
+    border-radius: var(--radius-md);
 
-    border: 1px solid rgba(100, 30, 22, 0.07);
-    border-radius: 12px;
+    background-color: var(--color-background-secondary);
 }
 
 .regional-food-image {
     position: relative;
 
-    height: 240px;
     overflow: hidden;
+
+    height: 240px;
 }
 
 .regional-food-image img {
@@ -597,15 +542,14 @@ REGIONAL FAVORITES
     left: 1rem;
 
     padding: 0.5rem 0.8rem;
-
     border-radius: 20px;
+
+    color: var(--color-heading);
+    background-color: var(--color-background);
 
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 2px;
-
-    color: var(--color-heading);
-    background-color: var(--color-background);
 }
 
 .regional-food-info {
@@ -615,69 +559,62 @@ REGIONAL FAVORITES
 .regional-food-info h4 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 1.7rem;
-
-    color: var(--color-heading);
 }
 
 .regional-food-info p {
     min-height: 75px;
-
     margin: 0.75rem 0 1.25rem;
 
     font-size: 0.85rem;
     line-height: 1.8;
+}
 
-    color: var(--color-text);
+.regional-food-info > a {
+    color: var(--color-primary);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.regional-food-info > a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
 .regional-source-note {
     display: block;
+
     margin-top: 0.5rem;
 
     font-size: 0.85rem;
     line-height: 1.5;
-
-    color: var(--color-text);
 }
 
 .regional-source-note a {
     color: var(--color-primary);
+
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 0.15em;
-}
-
-.regional-food-info > a {
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    color: var(--color-primary);
-}
-
-.regional-food-info > a:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
 }
 
 
 /*
 
 
-THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
+    THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 
 
 */
 
 
 .regions-cta {
-    padding: 3.5rem 4%;
-
-    text-align: center;
+    padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
+
+    text-align: center;
 }
 
 .regions-cta-content {
@@ -686,45 +623,37 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 }
 
 .regions-cta-content .section-eyebrow {
-    display: block;
     margin-bottom: 1rem;
 }
 
 .regions-cta-content h2 {
     margin: 0;
 
-    font-family: var(--font-heading);
     font-size: 3rem;
     line-height: 1.2;
-
-    color: var(--color-heading);
 }
 
 .regions-cta-content p {
     max-width: 600px;
-
     margin: 1.25rem auto 2rem;
 
     font-size: 0.95rem;
     line-height: 1.9;
-
-    color: var(--color-text);
 }
 
 .regions-cta-button {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 0.9rem 1.5rem;
+    border-radius: var(--radius-sm);
 
-    border-radius: 8px;
+    color: var(--color-background);
+    background-color: var(--color-primary);
 
     font-size: 0.9rem;
     font-weight: 600;
-
-    color: var(--color-white);
-    background-color: var(--color-primary);
 
     transition: background-color 0.2s ease;
 }
@@ -734,27 +663,25 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 }
 
 
-/* ---------- Respect "reduce motion" settings ---------- */
-@media (prefers-reduced-motion: reduce) {
+/*
 
-    .island-card-image img,
-    .island-card-info > a span {
-        transition: none;
-    }
 
-    .island-card:hover .island-card-image img,
-    .island-card-info > a:hover span {
-        transform: none;
-    }
-}
+    MEDIA QUERIES
+
+
+*/
 
 
 /* ---------- Tablets (up to 1024px) ---------- */
+
 @media (max-width: 1024px) {
 
     .regions-intro {
+        --gutter-x: 6%;
+
         gap: 2.5rem;
-        padding: 4rem 6%;
+
+        padding-block: 4rem;
     }
 
     .featured-region-container {
@@ -769,15 +696,18 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 
 
 /* ---------- Small tablets (up to 900px) ---------- */
+
 @media (max-width: 900px) {
 
     /* Intro: text on top, photo below */
+
     .regions-intro {
+        --gutter-x: 5%;
+
         grid-template-columns: 1fr;
-        gap: 2.5rem;
 
         min-height: 0;
-        padding: 3.5rem 5%;
+        padding-block: 3.5rem;
     }
 
     .regions-intro-content {
@@ -793,9 +723,10 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
     }
 
     /* Region spotlight: photo on top, text below */
+
     .featured-region-container {
-        grid-template-columns: 1fr;
         gap: 2rem;
+        grid-template-columns: 1fr;
     }
 
     .featured-region-image {
@@ -806,33 +737,32 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
         font-size: clamp(2.25rem, 7vw, 3.5rem);
     }
 
-    /* Island cards and regional dishes: one row you swipe sideways.
-       The next card peeks in from the edge so people can see there
-       is more. */
+    /* Island cards and regional dishes: one row you swipe sideways. The next
+       card peeks in from the edge so people can see there is more. */
+
     .island-groups-grid,
     .regional-food-grid {
         grid-template-columns: none;
         grid-auto-flow: column;
         grid-auto-columns: 44%;
-
-        /* a little room so card hover effects are not clipped */
-        padding: 0.5rem 0 1.25rem;
-
         overflow-x: auto;
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
         scrollbar-color: var(--color-accent) transparent;
         -webkit-overflow-scrolling: touch;
+
+        padding: 0.5rem 0 1.25rem;
     }
+
+    /* .island-groups-header p is more specific than .scroll-hint, so the
+       hint's size and line height are set again here */
 
     .island-groups-header .scroll-hint {
         display: block;
-        margin-top: 1rem;
+
         font-size: 0.8rem;
-        font-weight: 600;
         line-height: 1.5;
-        color: var(--color-primary);
     }
 
     .regional-food-group--scrollable > h3 {
@@ -841,6 +771,7 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 
     .regional-food-group--scrollable > .scroll-hint {
         display: block;
+
         margin-bottom: 0.75rem;
     }
 
@@ -848,40 +779,31 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
     .regional-food-grid > * {
         scroll-snap-align: start;
     }
-
-}
-
-@media (max-width: 640px) {
-    .regional-food-group--phone-scroll > h3 {
-        margin-bottom: 0.5rem;
-    }
-
-    .regional-food-group--phone-scroll > .scroll-hint {
-        display: block;
-        margin-bottom: 0.75rem;
-    }
 }
 
 
 /* ---------- Mobile landscape / large phones (up to 768px) ---------- */
+
 @media (max-width: 768px) {
 
     /* Section spacing */
+
     .island-groups {
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .featured-region,
     .regional-favorites,
     .regions-cta {
-        padding: 2.5rem 4%;
+        padding-block: 2.5rem;
     }
 
     .island-groups-header {
         margin-bottom: 2rem;
     }
 
-    /* Headings were fixed sizes, so make them fluid */
+    /* Headings: fluid sizes instead of the fixed desktop ones */
+
     .island-groups-header h2,
     .regional-favorites-header h2 {
         font-size: clamp(1.9rem, 5.5vw, 2.7rem);
@@ -893,6 +815,7 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 
     /* Regional favorites header: title block on top, "Explore All Foods"
        link below */
+
     .regional-favorites-header {
         flex-direction: column;
         align-items: flex-start;
@@ -902,10 +825,12 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 
 
 /* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
 
-    /* Swipe rows: wider cards so about one shows at a time, with a peek
-       of the next */
+    /* Swipe rows: wider cards so about one shows at a time, with a peek of
+       the next */
+
     .island-groups-grid,
     .regional-food-grid {
         grid-auto-columns: 80%;
@@ -918,28 +843,50 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
     .featured-region-image {
         height: 280px;
     }
+
+    /* Visayas has only two dishes, which fit side by side above 640px, so its
+       swipe hint only shows on phones */
+
+    .regional-food-group--phone-scroll > h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .regional-food-group--phone-scroll > .scroll-hint {
+        display: block;
+
+        margin-bottom: 0.75rem;
+    }
 }
 
 
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
+
     .island-groups,
-    .featured-region,
-    .regional-favorites,
-    .regions-cta {
+    .regional-favorites {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
 
+    .featured-region,
+    .regions-cta {
+        --gutter-x: 1.25rem;
+    }
+
     /* Intro */
+
     .regions-intro {
-        padding: 2.5rem 1.25rem 3rem;
+        --gutter-x: 1.25rem;
+
+        padding-block: 2.5rem 3rem;
     }
 
     .regions-breadcrumb {
         flex-wrap: wrap;
+
         margin-bottom: 1.75rem;
     }
 
@@ -956,6 +903,7 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
     }
 
     /* Island cards */
+
     .island-card-image {
         height: 210px;
     }
@@ -969,6 +917,7 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
     }
 
     /* Region spotlight */
+
     .featured-region-image {
         height: 240px;
     }
@@ -979,6 +928,7 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
     }
 
     /* Regional favorites */
+
     .regional-favorites-header {
         margin-bottom: 1.75rem;
     }
@@ -994,9 +944,26 @@ THERE'S MORE TO THE PHILIPPINES THAN MEETS THE PLATE.
 
 
 /* ---------- Very small phones (up to 360px) ---------- */
+
 @media (max-width: 360px) {
 
     .regions-intro-content h1 {
         font-size: 2.25rem;
+    }
+}
+
+
+/* ---------- Respect "reduce motion" settings ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .island-card-image img,
+    .island-card-info > a span {
+        transition: none;
+    }
+
+    .island-card:hover .island-card-image img,
+    .island-card-info > a:hover span {
+        transform: none;
     }
 }

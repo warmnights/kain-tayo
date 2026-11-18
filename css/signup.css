@@ -3,7 +3,7 @@
 /*
 
 
-ACCOUNT CREATION UNAVAILABLE.
+    TERMS AGREEMENT
 
 
 */
@@ -19,8 +19,6 @@ ACCOUNT CREATION UNAVAILABLE.
     font-size: 0.82rem;
     line-height: 1.6;
 
-    color: var(--color-text);
-
     cursor: pointer;
 }
 
@@ -33,9 +31,9 @@ ACCOUNT CREATION UNAVAILABLE.
 }
 
 .terms-agree a {
-    font-weight: 600;
-
     color: var(--color-accent);
+
+    font-weight: 600;
 }
 
 .terms-agree a:hover {
@@ -43,7 +41,17 @@ ACCOUNT CREATION UNAVAILABLE.
 }
 
 
+/*
+
+
+    MEDIA QUERIES
+
+
+*/
+
+
 /* ---------- Small phones (up to 480px) ---------- */
+
 @media (max-width: 480px) {
 
     .terms-agree {
