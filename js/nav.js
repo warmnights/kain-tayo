@@ -1,4 +1,4 @@
-/* Kain Tayo! - mobile menu (hamburger) toggle.
+/* Silangan - mobile menu (hamburger) toggle.
    Opens/closes the navbar on small screens by adding or removing
    the "is-open" class on .navbar. */
    
