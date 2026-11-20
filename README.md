@@ -13,7 +13,7 @@ Silangan is a multi-page website made for BSIT Web Systems and Technologies (IT 
 ## Features
 
 - Search for Filipino dishes by name or ingredient
-- Multi-page site with a shared navbar and footer
+- Multi-page site with a shared header and footer
 - Fully responsive layout for desktop, tablet and mobile
 - Hamburger menu on small screens
 - Swipeable card rows on tablets and phones

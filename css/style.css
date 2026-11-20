@@ -93,7 +93,7 @@
     --radius-pill: 999px;
 
     --container-width: 1400px;
-    --navbar-height: 88px;
+    --site-nav-height: 88px;
     --gutter: clamp(16px, 4vw, 32px);
 }
 
@@ -115,7 +115,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--navbar-height);
+    scroll-padding-top: var(--site-nav-height);
 
     -webkit-text-size-adjust: 100%;
 }
@@ -263,70 +263,79 @@ h3 {
 /*
 
 
-    NAVIGATION BAR
+    SITE HEADER AND NAVIGATION BAR
 
 
 */
 
 
-.navbar {
+/*
+
+    The header is the sticky part. A sticky element only stays stuck
+    inside its parent, so position: sticky lives here (the parent is the
+    whole page) and not on .site-nav (whose parent would be this header).
+
+*/
+
+.site-header {
     position: sticky;
     top: 0;
     z-index: 10;
+}
 
+.site-nav {
     display: flex;
     align-items: center;
 
-    min-height: var(--navbar-height);
+    min-height: var(--site-nav-height);
     padding-block: 1.25rem;
     border-bottom: 1px solid var(--color-background-secondary);
 
     background-color: var(--color-background);
 }
 
-.navbar-logo {
+.site-nav-logo {
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
 }
 
-.navbar-logo img {
+.site-nav-logo img {
     width: auto;
     height: 26px;
 }
 
-.navbar-links {
+.site-nav-links {
     display: flex;
     align-items: center;
     gap: clamp(1.1rem, 1.5vw, 1.5rem);
 
-    margin-left: 3rem;
-    margin-right: auto;
+    margin: 0 auto 0 3rem;
 }
 
-.navbar-links a {
+.site-nav-links a {
     font-size: 0.9rem;
     white-space: nowrap;
 }
 
-.navbar-links a:hover {
+.site-nav-links a:hover {
     color: var(--color-primary);
 
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
-.navbar-links a[aria-current="page"] {
+.site-nav-links a[aria-current="page"] {
     color: var(--color-primary);
 
     font-weight: 600;
 }
 
-.navbar-more {
+.site-nav-dropdown {
     position: relative;
 }
 
-.navbar-more > summary {
+.site-nav-dropdown > summary {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -337,24 +346,24 @@ h3 {
     cursor: pointer;
 }
 
-.navbar-more > summary:hover {
+.site-nav-dropdown > summary:hover {
     color: var(--color-primary);
 
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
-.navbar-more.is-current > summary {
+.site-nav-dropdown:has([aria-current="page"]) > summary {
     color: var(--color-primary);
 
     font-weight: 600;
 }
 
-.navbar-more > summary::-webkit-details-marker {
+.site-nav-dropdown > summary::-webkit-details-marker {
     display: none;
 }
 
-.navbar-more > summary::after {
+.site-nav-dropdown > summary::after {
     content: "";
 
     width: 0.35rem;
@@ -367,19 +376,20 @@ h3 {
     transform: rotate(45deg);
 }
 
-.navbar-more[open] > summary::after {
+.site-nav-dropdown[open] > summary::after {
     margin-top: 0.2rem;
 
     transform: rotate(225deg);
 }
 
-.navbar-more-menu {
+.site-nav-dropdown-menu {
     position: absolute;
     top: calc(100% + 0.75rem);
     left: 0;
     z-index: 11;
 
     min-width: 11rem;
+    margin: 0;
     padding: 0.35rem;
     border: 1px solid var(--color-background-secondary);
     border-radius: var(--radius-sm);
@@ -388,17 +398,17 @@ h3 {
     box-shadow: var(--shadow-card);
 }
 
-.navbar-more-menu a {
+.site-nav-dropdown-menu a {
     display: block;
 
     padding: 0.6rem 0.75rem;
 }
 
-.navbar-more-menu a:hover {
+.site-nav-dropdown-menu a:hover {
     background-color: var(--color-background-secondary);
 }
 
-.navbar-actions {
+.site-nav-actions {
     display: flex;
     align-items: center;
     gap: 1.25rem;
@@ -407,14 +417,14 @@ h3 {
     margin-left: auto;
 }
 
-.navbar-login {
+.site-nav-cta {
     font-size: 0.9rem;
     white-space: nowrap;
 
     transition: color 0.2s ease;
 }
 
-.navbar-login:hover {
+.site-nav-cta:hover {
     color: var(--color-primary);
 
     text-decoration: underline;
@@ -427,7 +437,7 @@ h3 {
 
 */
 
-.navbar-toggle {
+.site-nav-toggle {
     display: none;
 }
 
@@ -453,7 +463,7 @@ h3 {
     align-items: center;
     overflow: hidden;
 
-    min-height: calc(100svh - var(--navbar-height));
+    min-height: calc(100svh - var(--site-nav-height));
     padding-block: 3rem calc(3rem + var(--mountain-height) * 0.25);
 
     text-align: center;
@@ -1467,9 +1477,9 @@ h3 {
 
 @media (max-width: 1180px) {
 
-    /* Navbar: tighten spacing so the links, More menu and Log In still fit on one row */
+    /* Site nav: tighten spacing so the links, More menu and Log In still fit on one row */
 
-    .navbar-links {
+    .site-nav-links {
         gap: 1rem;
 
         margin-left: 2rem;
@@ -1479,12 +1489,19 @@ h3 {
 
 /* ---------- Tablets landscape and smaller (up to 1080px) ---------- */
 
-/* Navbar switches to a hamburger menu. The links and buttons are hidden
+/* The site nav switches to a hamburger menu. The links and buttons are hidden
    until the menu button is pressed (nav.js adds/removes .is-open). */
 
 @media (max-width: 1080px) {
 
-    .navbar {
+    /* The closed site nav is shorter here (hamburger row), so anchors and
+       the hero use its real height */
+
+    :root {
+        --site-nav-height: 69px;
+    }
+
+    .site-nav {
         flex-wrap: wrap;
 
         min-height: 0;
@@ -1493,20 +1510,20 @@ h3 {
 
     /* If the open menu is taller than the screen, let it scroll */
 
-    .navbar.is-open {
+    .site-nav.is-open {
         overflow-y: auto;
 
         max-height: 100vh;
         max-height: 100dvh;
     }
 
-    .navbar-logo {
+    .site-nav-logo {
         order: 1;
     }
 
     /* The hamburger button */
 
-    .navbar-toggle {
+    .site-nav-toggle {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -1526,16 +1543,16 @@ h3 {
         transition: background-color 0.2s ease;
     }
 
-    .navbar-toggle:hover {
+    .site-nav-toggle:hover {
         background-color: var(--color-background-secondary);
     }
 
-    .navbar-toggle:focus-visible {
+    .site-nav-toggle:focus-visible {
         outline: 2px solid var(--color-accent);
         outline-offset: 2px;
     }
 
-    .navbar-toggle svg {
+    .site-nav-toggle svg {
         width: 24px;
         height: 24px;
 
@@ -1547,21 +1564,21 @@ h3 {
 
     /* Show the three-line icon by default, the X icon when open */
 
-    .navbar-toggle .icon-close {
+    .site-nav-toggle .icon-close {
         display: none;
     }
 
-    .navbar.is-open .navbar-toggle .icon-menu {
+    .site-nav.is-open .site-nav-toggle .icon-menu {
         display: none;
     }
 
-    .navbar.is-open .navbar-toggle .icon-close {
+    .site-nav.is-open .site-nav-toggle .icon-close {
         display: block;
     }
 
     /* Menu links: hidden until opened, then a vertical list */
 
-    .navbar-links {
+    .site-nav-links {
         display: none;
         flex-direction: column;
         align-items: stretch;
@@ -1574,11 +1591,11 @@ h3 {
         border-top: 1px solid var(--color-background-secondary);
     }
 
-    .navbar-links > li {
+    .site-nav-links > li {
         border-bottom: 1px solid var(--color-border);
     }
 
-    .navbar-links a {
+    .site-nav-links a {
         display: block;
 
         padding: 0.8rem 0;
@@ -1588,7 +1605,7 @@ h3 {
 
     /* Log In: hidden until the menu is opened */
 
-    .navbar-actions {
+    .site-nav-actions {
         display: none;
         flex-direction: column;
         align-items: stretch;
@@ -1600,14 +1617,14 @@ h3 {
         padding: 1rem 0 0.5rem;
     }
 
-    .navbar-login {
+    .site-nav-cta {
         padding: 0.6rem 0;
 
         font-size: 0.95rem;
         text-align: center;
     }
 
-    .navbar-more > summary {
+    .site-nav-dropdown > summary {
         display: flex;
         justify-content: space-between;
 
@@ -1616,7 +1633,7 @@ h3 {
         font-size: 1rem;
     }
 
-    .navbar-more-menu {
+    .site-nav-dropdown-menu {
         position: static;
 
         min-width: 0;
@@ -1629,12 +1646,12 @@ h3 {
         box-shadow: none;
     }
 
-    .navbar-more-menu a {
+    .site-nav-dropdown-menu a {
         padding: 0.65rem 0;
     }
 
-    .navbar.is-open .navbar-links,
-    .navbar.is-open .navbar-actions {
+    .site-nav.is-open .site-nav-links,
+    .site-nav.is-open .site-nav-actions {
         display: flex;
     }
 }
@@ -1680,7 +1697,7 @@ h3 {
         scrollbar-color: var(--color-accent) transparent;
         -webkit-overflow-scrolling: touch;
 
-        /* a little room so card hover shadows are not clipped */
+        /* A little room so card hover shadows are not clipped */
 
         padding: 0.5rem 0 1.25rem;
     }
@@ -1857,7 +1874,7 @@ h3 {
         --gutter-x: 1.25rem;
     }
 
-    .navbar {
+    .site-nav {
         --gutter-x: 1.25rem;
     }
 
@@ -1981,9 +1998,9 @@ h3 {
 
 @media (max-width: 900px), (any-pointer: coarse) {
 
-    .navbar-logo,
-    .navbar-links a,
-    .navbar-actions a,
+    .site-nav-logo,
+    .site-nav-links a,
+    .site-nav-actions a,
     .search-suggestions a,
     .intro-search button,
     .near-me-link,
@@ -2016,7 +2033,7 @@ h3 {
 
 @media (min-width: 1081px) and (any-pointer: coarse) {
 
-    .navbar-links a {
+    .site-nav-links a {
         display: inline-flex;
         align-items: center;
     }

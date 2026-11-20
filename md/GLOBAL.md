@@ -10,11 +10,11 @@ This is my global CSS (`css/style.css`). It applies to every page. When cleaning
 
 ## Page structure (every page)
 
-- Every page wraps **all** its content in one `<div class="container">`: the skip link, the navbar, `<main>` and the footer. The container sets the global max width. Page sections should not set their own `max-width` or `margin: 0 auto` for the page width. A narrower reading width inside a section (for example `max-width: 700px; margin: 0 auto` on centered text) is fine.
+- Every page wraps **all** its content in one `<div class="container">`: the skip link, the site header, `<main>` and the footer. The container sets the global max width. Page sections should not set their own `max-width` or `margin: 0 auto` for the page width. A narrower reading width inside a section (for example `max-width: 700px; margin: 0 auto` on centered text) is fine.
 - Pages live in the `pages/` folder, so they use `../` to reach the root: `../css/style.css`, `../js/nav.js`, `../assets/...`, `../index.html`. Links to other pages need no prefix (`near-me.html`).
-- The navbar is the same on every page (copy it from `top-foods.html` and move `aria-current="page"` to the current link). It is `<nav class="navbar full-bleed">`. The footer is `<footer class="footer full-bleed">`.
+- The site header is the same on every page (copy it from `top-foods.html` and move `aria-current="page"` to the current link). It is `<header class="site-header">`, a direct child of `.container`, and it holds `<nav class="site-nav full-bleed">`. When the current page is in the More menu, the More button highlights by itself (CSS `:has()`), so no extra class is needed. The footer is `<footer class="footer full-bleed">`.
 - A section whose background must span the full screen gets the class `full-bleed` in the HTML (for example `<section class="near-spots full-bleed">`). In the page stylesheet, do **not** repeat `width: 100vw`, `margin-left: calc(50% - 50vw)` or the side padding. Set the side gutter with `--gutter-x` and the top and bottom spacing with `padding-block`. The gutter defaults to `4%`.
-- Add `class="list-reset"` to every `<ul>` that should have no bullets and no left padding (navbar links, the More menu, footer lists, link lists). `.list-reset` does **not** reset margin; set `margin: 0` on the list if you need it.
+- Add `class="list-reset"` to every `<ul>` that should have no bullets and no left padding (site nav links, the More menu, footer lists, link lists). `.list-reset` does **not** reset margin; set `margin: 0` on the list if you need it.
 
 ## What is already set globally
 
@@ -27,9 +27,9 @@ This is my global CSS (`css/style.css`). It applies to every page. When cleaning
 - `input, button`: `font-family: inherit`.
 - `:focus-visible`: 3px solid `var(--color-primary)` outline with 3px offset.
 - `.container`, `.full-bleed`, `.list-reset`, `.section-eyebrow`, `.skip-link`.
-- `html`: smooth scrolling, and `scroll-padding-top: var(--navbar-height)`.
+- `html`: smooth scrolling, and `scroll-padding-top: var(--site-nav-height)`.
 - Border radius variables: `--radius-sm` (8px: buttons, menus), `--radius-md` (12px: cards), `--radius-lg` (16px: large cards and images), `--radius-pill` (999px: tags and pills). Use them instead of pixel values.
-- Navbar (`.navbar`, `.navbar-logo`, `.navbar-toggle`, `.navbar-links`, `.navbar-more`, `.navbar-more-menu`, `.navbar-actions`, `.navbar-login`): fully styled in `style.css`, including the hamburger menu below 1080px (`nav.js` adds and removes `.is-open`). Page stylesheets do not restyle it.
+- Site header and nav (`.site-header`, `.site-nav`, `.site-nav-logo`, `.site-nav-toggle`, `.site-nav-links`, `.site-nav-dropdown`, `.site-nav-dropdown-menu`, `.site-nav-actions`, `.site-nav-cta`): fully styled in `style.css`, including the hamburger menu below 1080px (`nav.js` adds and removes `.is-open`). Page stylesheets do not restyle it. `.site-header` is sticky with `z-index: 10`, and the More menu is `z-index: 11`. The bar is 88px tall, or 69px up to 1080px.
 - Footer (`.footer`, `.footer-main`, `.footer-logo`, `.footer-brand`, `.footer-brand-tagline`, `.footer-links`, `.footer-about`, `.footer-explore-link`, `.footer-bottom`, `.footer-legal`): fully styled in `style.css`. `.footer-container` has no styles.
 - `.restaurant-preview-notice` and its `p` are styled in `style.css` (used on the home page and on Near Me).
 
@@ -134,7 +134,7 @@ This is my global CSS (`css/style.css`). It applies to every page. When cleaning
     --radius-pill: 999px;
 
     --container-width: 1400px;
-    --navbar-height: 88px;
+    --site-nav-height: 88px;
     --gutter: clamp(16px, 4vw, 32px);
 }
 ```
@@ -159,7 +159,7 @@ This is my global CSS (`css/style.css`). It applies to every page. When cleaning
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--navbar-height);
+    scroll-padding-top: var(--site-nav-height);
 
     -webkit-text-size-adjust: 100%;
 }

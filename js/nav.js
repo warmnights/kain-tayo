@@ -1,10 +1,10 @@
 /* Silangan - mobile menu (hamburger) toggle.
-   Opens/closes the navbar on small screens by adding or removing
-   the "is-open" class on .navbar. */
-   
+   Opens and closes the site nav on small screens by adding or removing
+   the "is-open" class on .site-nav. */
+
 (function () {
-    var nav = document.querySelector('.navbar');
-    var toggle = nav ? nav.querySelector('.navbar-toggle') : null;
+    var nav = document.querySelector('.site-nav');
+    var toggle = nav ? nav.querySelector('.site-nav-toggle') : null;
 
     if (!nav || !toggle) {
         return;
@@ -29,7 +29,7 @@
         }
     });
 
-    // Clicking outside the navbar closes the menu
+    // Clicking outside the site nav closes the menu
     document.addEventListener('click', function (event) {
         if (!nav.contains(event.target)) {
             setOpen(false);

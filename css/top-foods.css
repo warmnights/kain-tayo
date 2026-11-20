@@ -505,7 +505,8 @@
     }
 
     /* Favorites: one row of cards you swipe sideways. The next card
-       peeks in from the edge so people can see there is more. */
+       peeks in from the edge so people can see there is more. The padding
+       leaves room so the cards' edges are not clipped by the scroll area. */
 
     .filipino-food-grid {
         grid-template-columns: none;
@@ -517,8 +518,6 @@
         scrollbar-width: thin;
         scrollbar-color: var(--color-accent) transparent;
         -webkit-overflow-scrolling: touch;
-
-        /* a little room so the cards' edges are not clipped by the scroll area */
 
         padding: 0.5rem 0 1.25rem;
     }
@@ -554,7 +553,7 @@
         padding-block: 2.5rem;
     }
 
-    /* Headings were fixed sizes, so make them fluid */
+    /* Fluid heading sizes on smaller screens */
 
     .featured-food-heading h2 {
         font-size: clamp(1.75rem, 5vw, 2.5rem);
@@ -601,7 +600,7 @@
 
 @media (max-width: 480px) {
 
-    /* Slightly larger side gutters than the default 4% so text doesn't hug the edge */
+    /* Fixed 1.25rem side gutters so text doesn't hug the edge */
 
     .top-foods-intro,
     .featured-food,
