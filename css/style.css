@@ -68,24 +68,22 @@
     --font-heading: 'Fraunces', Georgia, serif;
     --font-body: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-    --color-background: #3D0A0F;
-    --color-background-secondary: #5E0B15;
-    --color-surface: #4A0D14;
+    --color-background: #2B0609;
+    --color-background-secondary: #4A0A14;
+    --color-surface: #3A0810;
 
-    --color-text: #F7EFE0;
-    --color-text-muted: #F7EFE09E;
-    --color-heading: #EDBB62;
+    --color-text: #FBF1DC;
+    --color-text-muted: #FBF1DCB3;
+    --color-heading: #F0C766;
 
-    --color-primary: #EDBB62;
-    --color-secondary: #C98A5A;
-    --color-accent: #B85C38;
+    --color-primary: #E8B84A;
+    --color-secondary: #C98F47;
+    --color-accent: #E8633A;
+    --color-crimson: #C8283F;
 
-    --color-border: rgba(237, 187, 98, 0.25);
+    --color-border: rgba(232, 184, 74, 0.28);
 
-    --color-white: #FFFFFF;
-    --color-black: #000000;
-
-    --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-card: 0 8px 24px rgba(10, 0, 2, 0.5);
 
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -692,8 +690,7 @@ h3 {
 
     height: calc(var(--mountain-height) * 0.5);
 
-    opacity: 0.1;
-    filter: brightness(1.6) saturate(0.8);
+    opacity: 0.3;
 
     transform: scaleX(-1);
 }
