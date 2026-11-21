@@ -27,29 +27,6 @@
     max-width: 600px;
 }
 
-.regions-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2.5rem;
-
-    color: var(--color-primary);
-
-    font-size: 0.8rem;
-}
-
-.regions-breadcrumb a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-.regions-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .regions-intro-content .section-eyebrow {
     margin-bottom: 1.25rem;
 }
@@ -882,12 +859,6 @@
         --gutter-x: 1.25rem;
 
         padding-block: 2.5rem 3rem;
-    }
-
-    .regions-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.75rem;
     }
 
     .regions-intro-image {

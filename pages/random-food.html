@@ -63,13 +63,14 @@
             </nav>
         </header>
 
-        <main id="main">
+        <main id="main" tabindex="-1">
             <section class="random-intro full-bleed">
-                <div class="random-breadcrumb">
-                    <a href="../index.html">Home</a>
-                    <span>/</span>
-                    <span>Random Food</span>
-                </div>
+                <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+                    <ol class="breadcrumb-list list-reset">
+                        <li><a href="../index.html">Home</a></li>
+                        <li aria-current="page">Random Food</li>
+                    </ol>
+                </nav>
 
                 <div class="random-intro-content">
                     <h1>

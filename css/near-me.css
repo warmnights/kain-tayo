@@ -20,27 +20,6 @@
     margin: 0 auto;
 }
 
-.near-me-breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2rem;
-
-    font-size: 0.8rem;
-}
-
-.near-me-breadcrumb a {
-    color: var(--color-primary);
-}
-
-.near-me-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .near-intro h1 {
     margin: 0 0 1.25rem;
 
@@ -274,14 +253,6 @@
     .near-spots,
     .near-explore {
         --gutter-x: 1.25rem;
-    }
-
-    /* Intro */
-
-    .near-me-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.5rem;
     }
 
     /* Section header */

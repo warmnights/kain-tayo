@@ -31,28 +31,6 @@
     max-width: 520px;
 }
 
-.login-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2.5rem;
-
-    color: var(--color-text-muted);
-
-    font-size: 0.8rem;
-}
-
-.login-breadcrumb a {
-    color: var(--color-accent);
-}
-
-.login-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .login-content h1 {
     margin: 0;
 
@@ -530,12 +508,6 @@
         --gutter-x: 1.25rem;
 
         padding-block: 2.5rem 3rem;
-    }
-
-    .login-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.75rem;
     }
 
     .social-button {

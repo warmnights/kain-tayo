@@ -23,35 +23,6 @@
     background-color: var(--color-background-secondary);
 }
 
-.top-foods-intro-content {
-    max-width: 650px;
-}
-
-.top-foods-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2.5rem;
-
-    font-size: 0.8rem;
-}
-
-.top-foods-breadcrumb a {
-    color: var(--color-primary);
-}
-
-.top-foods-breadcrumb a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-.top-foods-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .top-foods-intro h1 {
     margin: 0;
 
@@ -412,7 +383,6 @@
 */
 
 
-.top-foods-breadcrumb a:focus-visible,
 .top-foods-intro-button:focus-visible,
 .featured-food-link:focus-visible,
 .filipino-food-info > a:focus-visible,
@@ -617,12 +587,6 @@
 
     .top-foods-intro-image {
         height: 200px;
-    }
-
-    .top-foods-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.75rem;
     }
 
     /* Featured dish card */

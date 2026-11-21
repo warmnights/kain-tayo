@@ -63,15 +63,16 @@
             </nav>
         </header>
 
-        <main>
+        <main id="main" tabindex="-1">
             <section class="login-section full-bleed">
                 <div class="login-container">
                     <div class="login-content">
-                        <div class="login-breadcrumb">
-                            <a href="../index.html">Home</a>
-                            <span>/</span>
-                            <span>Log In</span>
-                        </div>
+                        <nav class="breadcrumb" aria-label="Breadcrumb">
+                            <ol class="breadcrumb-list list-reset">
+                                <li><a href="../index.html">Home</a></li>
+                                <li aria-current="page">Log In</li>
+                            </ol>
+                        </nav>
 
                         <h1>Account <span>sign-in isn't available.</span></h1>
 

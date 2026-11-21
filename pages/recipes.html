@@ -63,14 +63,15 @@
             </nav>
         </header>
 
-        <main id="main">
+        <main id="main" tabindex="-1">
             <section class="recipes-intro full-bleed">
                 <div class="recipes-intro-content">
-                    <div class="recipes-breadcrumb">
-                        <a href="../index.html">Home</a>
-                        <span>/</span>
-                        <span>Recipes</span>
-                    </div>
+                    <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+                        <ol class="breadcrumb-list list-reset">
+                            <li><a href="../index.html">Home</a></li>
+                            <li aria-current="page">Recipes</li>
+                        </ol>
+                    </nav>
 
                     <h1>
                         Cook Something

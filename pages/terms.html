@@ -63,14 +63,15 @@
             </nav>
         </header>
 
-        <main id="main">
+        <main id="main" tabindex="-1">
             <section class="legal-intro full-bleed">
                 <div class="legal-intro-content">
-                    <div class="legal-breadcrumb">
-                        <a href="../index.html">Home</a>
-                        <span>/</span>
-                        <span>Terms of Service</span>
-                    </div>
+                    <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+                        <ol class="breadcrumb-list list-reset">
+                            <li><a href="../index.html">Home</a></li>
+                            <li aria-current="page">Terms of Service</li>
+                        </ol>
+                    </nav>
 
                     <h1>Terms of <span>Service.</span></h1>
 

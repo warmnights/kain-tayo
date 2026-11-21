@@ -24,27 +24,6 @@
     margin: 0 auto;
 }
 
-.map-breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2.5rem;
-
-    font-size: 0.8rem;
-}
-
-.map-breadcrumb a {
-    color: var(--color-primary);
-}
-
-.map-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .map-intro h1 {
     margin: 0;
 
@@ -300,7 +279,6 @@
 */
 
 
-.map-breadcrumb a:focus-visible,
 .map-island-item:focus-visible,
 .map-explore-button:focus-visible,
 .map-cta-button:focus-visible {
@@ -418,12 +396,6 @@
 
     .map-intro {
         padding-block: 2.5rem 3rem;
-    }
-
-    .map-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.75rem;
     }
 
     /* Map panel */

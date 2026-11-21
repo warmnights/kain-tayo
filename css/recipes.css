@@ -22,30 +22,6 @@
     margin: 0 auto;
 }
 
-.recipes-breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2rem;
-
-    color: var(--color-primary);
-
-    font-size: 0.875rem;
-}
-
-.recipes-breadcrumb a {
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
-}
-
-.recipes-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .recipes-intro h1 {
     margin: 0;
 
@@ -756,12 +732,6 @@
 
     .recipes-intro {
         padding-block: 1.75rem;
-    }
-
-    .recipes-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.5rem;
     }
 
     .recipe-spotlight-header {

@@ -22,27 +22,6 @@
     margin: 0 auto;
 }
 
-.foods-breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2rem;
-
-    font-size: 0.8rem;
-}
-
-.foods-breadcrumb a {
-    color: var(--color-heading);
-}
-
-.foods-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .foods-intro .section-eyebrow {
     margin-bottom: 1rem;
 }
@@ -913,14 +892,6 @@
     .regional-discovery {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
-    }
-
-    /* Intro */
-
-    .foods-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.5rem;
     }
 
     /* Category tiles */

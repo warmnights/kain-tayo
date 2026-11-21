@@ -63,14 +63,15 @@
             </nav>
         </header>
 
-        <main id="main">
+        <main id="main" tabindex="-1">
             <section class="foods-intro full-bleed">
                 <div class="foods-intro-content">
-                    <div class="foods-breadcrumb">
-                        <a href="../index.html">Home</a>
-                        <span>/</span>
-                        <span>Foods</span>
-                    </div>
+                    <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+                        <ol class="breadcrumb-list list-reset">
+                            <li><a href="../index.html">Home</a></li>
+                            <li aria-current="page">All Foods</li>
+                        </ol>
+                    </nav>
 
                     <span class="section-eyebrow">
                         EXPLORE FILIPINO CUISINE

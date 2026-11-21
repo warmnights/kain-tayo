@@ -63,14 +63,15 @@
             </nav>
         </header>
 
-        <main id="main">
+        <main id="main" tabindex="-1">
             <section class="map-intro full-bleed">
                 <div class="map-intro-content">
-                    <div class="map-breadcrumb">
-                        <a href="../index.html">Home</a>
-                        <span>/</span>
-                        <span>Map</span>
-                    </div>
+                    <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+                        <ol class="breadcrumb-list list-reset">
+                            <li><a href="../index.html">Home</a></li>
+                            <li aria-current="page">Map</li>
+                        </ol>
+                    </nav>
 
                     <h1>
                         Explore the Philippines,

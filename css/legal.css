@@ -22,25 +22,6 @@
     margin: 0 auto;
 }
 
-.legal-breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2rem;
-
-    color: var(--color-primary);
-
-    font-size: 0.8rem;
-}
-
-.legal-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .legal-intro h1 {
     margin: 0;
 
@@ -322,12 +303,6 @@
 
     .legal-intro {
         padding-top: 2.5rem;
-    }
-
-    .legal-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.5rem;
     }
 
     .legal-toc {

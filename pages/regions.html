@@ -64,14 +64,15 @@
             </nav>
         </header>
 
-        <main id="main">
+        <main id="main" tabindex="-1">
             <section class="regions-intro full-bleed">
                 <div class="regions-intro-content">
-                    <div class="regions-breadcrumb">
-                        <a href="../index.html">Home</a>
-                        <span>/</span>
-                        <span>Regions</span>
-                    </div>
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <ol class="breadcrumb-list list-reset">
+                            <li><a href="../index.html">Home</a></li>
+                            <li aria-current="page">Regions</li>
+                        </ol>
+                    </nav>
 
                     <span class="section-eyebrow">
                         A COUNTRY FULL OF FLAVOR

@@ -17,25 +17,6 @@
     text-align: center;
 }
 
-.random-breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.65rem;
-
-    margin-bottom: 2rem;
-
-    color: var(--color-primary);
-
-    font-size: 0.8rem;
-}
-
-.random-breadcrumb span:last-child {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
 .random-intro-content {
     max-width: 850px;
     margin: 0 auto;
@@ -453,7 +434,6 @@
 */
 
 
-.random-breadcrumb a:focus-visible,
 .random-intro-button:focus-visible,
 .surprise-pick-button:focus-visible,
 .random-recipe-link:focus-visible,
@@ -610,12 +590,6 @@
 
     .random-intro {
         padding-top: 2.5rem;
-    }
-
-    .random-breadcrumb {
-        flex-wrap: wrap;
-
-        margin-bottom: 1.5rem;
     }
 
     /* Featured dish */
